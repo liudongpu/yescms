@@ -54,6 +54,9 @@ body,html
 .w_h_10 {
 	height: 10px;
 }
+.w_h_15 {
+	height: 15px;
+}
 .w_h_20 {
 	height: 20px;
 }
@@ -102,13 +105,7 @@ body,html
 }
 
 
-/*进度条*/
-.w_loading_small {
-	background-image: url("../img/loading-small.gif");
-	height: 20px;
-	width: 240px;
-	background-repeat: no-repeat;
-}
+
 
 .w_ul, .w_ullist {
 	margin: 0px;
