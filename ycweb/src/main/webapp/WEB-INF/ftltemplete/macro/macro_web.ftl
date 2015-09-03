@@ -8,6 +8,11 @@
 <#-- 图片文件路径 -->
 <#assign a_macro_web_img_link="../../" >
 
+
+<#-- 标准页面后缀路径 -->
+<#assign a_macro_web_html_attr=".html" >
+
+
 <#-- 项目特殊样式 -->
 
 
@@ -104,15 +109,24 @@
 <#assign a_macro_web_dbcall=b_method.upClass("com.srnpr.zapweb.websupport.DataCallSupport") >
 </#macro>
 
-<#macro m_web_html_img p_link="" p_alt="" p_width=-1 >
+<#-- 初始化数据操作脚本  -->
+<#macro m_web_init_sessionhelper>
+<#assign a_macro_web_sessionhelper=b_method.upClass("com.srnpr.zapweb.helper.WebSessionHelper") />
+</#macro>
 
-<img src="${p_link}" alt="${p_alt}" /></#macro>
+
+<#macro m_web_html_img p_link="" p_alt="" p_width=-1 p_img="" >
+
+<#if p_link!=""><a href="${p_link}"></#if>
+
+<#if (p_width>-1)><#local p_img=p_img?replace(".jpg","-"+(p_width)+"-1000.jpg")?replace(".com/",".com/qsize/") /></#if>
+<img src="${p_img}" alt="${p_alt}" /><#if p_link!=""></a></#if></#macro>
 
 
 <#-- 基础元素  -->
 <#macro m_web_html_href  p_link p_text>
-<#if p_link!="">
-	<#local p_link=p_link+".html">
+<#if ((p_link!="")&&!(p_link?contains("?")))>
+	<#local p_link=p_link+a_macro_web_html_attr>
 </#if>
 <a href="${p_link}" >${p_text}</a></#macro>
 

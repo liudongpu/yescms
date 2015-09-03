@@ -25,8 +25,10 @@
 				<ul class="w_ul">
 					<li><@m_web_html_href "index"  "首&nbsp;&nbsp;&nbsp;页"/> </li>
 					<li><@m_web_html_href "news_list"  "正道资讯"/>  </li>
-					<li><a href="">正道公告</a></li>
-					<li class="c_nav_last"><a href=""> 预展及成交</a> </li>
+					<li><@m_web_html_href "notice_list"  "正道公告"/>  </li>
+					<li><@m_web_html_href "auction_list"  "预展及成交"/>  </li>
+					<li class="c_nav_last"><@m_web_html_href "auction_list"  "名家论道"/>  </li>
+					
 				</ul>
 			</div>
 			<div class="c_right">
@@ -95,9 +97,9 @@
 
 
 
-<#macro m_site_body_begin  >
+<#macro m_site_body_begin p_bg="" >
 <div  class="ycbase_body_show_layout">
-	<div class="ycbase_body_box_layout">
+	<div class="ycbase_body_box_layout ${p_bg}">
 
 
 </#macro>
@@ -130,5 +132,35 @@
 	<div class="w_h_15 w_clear"></div>
 	 
 </div>
+</#macro>
+
+
+<#macro m_site_sub_list>
+
+	<div class="yctop_subtitle ycbase_img_ycico">最新文章</div>
+		<div class="w_h_10"></div>
+		<div class="yctop_subinfo">
+			<ul>
+				<#list a_macro_web_dbcall.query("yc_news","","-orderid,-create_time","",0,10) as  el >
+					<li>
+						<@m_web_html_href "news_info?u_id="+el["uid"] el["title"]/>	
+					</li>
+				</#list>
+			</ul>
+		</div>
+		<div class="w_h_40"></div>
+		<div class="yctop_subtitle ycbase_img_ycico">最新公告</div>
+		<div class="w_h_10"></div>
+		<div class="yctop_subinfo">
+			<ul>
+				<#list a_macro_web_dbcall.query("yc_notice","","-orderid,-create_time","",0,10) as  el >
+					<li>
+						<@m_web_html_href "notice_info?u_id="+el["uid"] el["title"]/>	
+					</li>
+				</#list>
+			</ul>
+		</div>
+		<div class="w_h_40"></div>
+
 </#macro>
 

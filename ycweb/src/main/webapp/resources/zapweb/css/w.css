@@ -60,6 +60,12 @@ body,html
 .w_h_20 {
 	height: 20px;
 }
+.w_h_30 {
+	height: 30px;
+}
+.w_h_50 {
+	height: 50px;
+}
 .w_h_100 {
 	height: 100px;
 }
@@ -135,6 +141,11 @@ body,html
 .w_position
 {
 	position: absolute;
+}
+
+.w_border_none
+{
+	border: none;
 }
 
 
