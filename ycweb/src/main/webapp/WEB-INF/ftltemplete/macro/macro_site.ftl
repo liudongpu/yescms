@@ -27,7 +27,7 @@
 					<li><@m_web_html_href "news_list"  "正道资讯"/>  </li>
 					<li><@m_web_html_href "notice_list"  "正道公告"/>  </li>
 					<li><@m_web_html_href "auction_list"  "预展及成交"/>  </li>
-					<li class="c_nav_last"><@m_web_html_href "auction_list"  "名家论道"/>  </li>
+					<li class="c_nav_last"><@m_web_html_href "people_list"  "名家论道"/>  </li>
 					
 				</ul>
 			</div>

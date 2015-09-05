@@ -8,7 +8,7 @@
 
 <#assign   a_list=a_macro_web_dbcall.queryAll("yc_auction","","-time,-zid","") />
 
-<#assign auction_list_year="2015" />
+<#assign auction_list_year=(.now?date?substring(0,4)) />
 
 <div class="ycsite_al_box ycbase_body_back_layout" >
 	<div class="c_item">

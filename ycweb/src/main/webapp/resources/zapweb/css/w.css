@@ -148,4 +148,11 @@ body,html
 	border: none;
 }
 
-
+.w_fw_b
+{
+	font-weight:bold;
+}
+.w_fs_14
+{
+	font-size:14px;
+}

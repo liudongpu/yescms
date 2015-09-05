@@ -71,7 +71,7 @@
 					
 					<div class="c_detail">图录号：${el["code"]}</div>	
 					<div class="c_detail">参考价：${el["assess_price"]} </div>
-					<div class="c_detail">成交价：<span class="yctop_price">${el["success_price"]}</span></div>
+					<div class="c_detail">成交价：<span class="yctop_price"><@m_web_format_money p_money=el["success_price"]/></span></div>
 					
 	
 				</div>

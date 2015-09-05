@@ -109,12 +109,25 @@
 <#assign a_macro_web_dbcall=b_method.upClass("com.srnpr.zapweb.websupport.DataCallSupport") >
 </#macro>
 
-<#-- 初始化数据操作脚本  -->
+<#-- 初始化request脚本  -->
 <#macro m_web_init_sessionhelper>
 <#assign a_macro_web_sessionhelper=b_method.upClass("com.srnpr.zapweb.helper.WebSessionHelper") />
 </#macro>
 
 
+<#-- 格式化脚本  -->
+<#macro m_web_format_money p_money=0 ><#if ((p_money?number)<=0)>暂无<#else>${(p_money?number?string("#.##")?number?string.currency)}</#if></#macro>
+
+<#-- 事件操作元素  -->
+
+<#macro m_web_event_href p_link="" > location.href='${p_link}' </#macro>
+
+
+
+<#-- 基础元素  -->
+
+
+<#-- 图像元素  -->
 <#macro m_web_html_img p_link="" p_alt="" p_width=-1 p_img="" >
 
 <#if p_link!=""><a href="${p_link}"></#if>
@@ -123,7 +136,7 @@
 <img src="${p_img}" alt="${p_alt}" /><#if p_link!=""></a></#if></#macro>
 
 
-<#-- 基础元素  -->
+<#-- 超链接  -->
 <#macro m_web_html_href  p_link p_text>
 <#if ((p_link!="")&&!(p_link?contains("?")))>
 	<#local p_link=p_link+a_macro_web_html_attr>
