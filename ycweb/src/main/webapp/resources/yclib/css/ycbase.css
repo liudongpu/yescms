@@ -10,7 +10,6 @@ a, a:hover {
 
 /*********************************/
 
-
 /*********************************/
 .ycbase_img_ycico {
 	background-image: url("../image/ycico.png");
@@ -71,6 +70,10 @@ a, a:hover {
 	height: 112px;
 }
 
+.ycbase_header_layout  .c_user {
+	color: #a28972;
+}
+
 .ycbase_header_layout .c_right .c_button {
 	background-position: -200px 0px;
 	width: 70px;
@@ -78,6 +81,10 @@ a, a:hover {
 	height: 25px;
 	color: #4c2b2a;
 	text-indent: 15px;
+}
+
+.ycbase_header_layout .c_right .c_button a {
+	color: #4c2b2a;
 }
 
 .ycbase_header_layout .c_right .c_search {
@@ -251,8 +258,6 @@ a, a:hover {
 .yctop_table tbody tr:hover {
 	background-color: #f6f1eb;
 }
-
-
 
 .ycsite_index_main {
 	width: 100%;
@@ -714,9 +719,163 @@ a, a:hover {
 	padding-left: 20px;
 }
 
+.ycsite_pa_box thead tr {
+	background-color: #fdfdfd;
+}
 
-.ycsite_pa_box thead tr
+.ycsite_member_box .c_box {
+	padding: 50px 70px 180px 70px;
+}
+
+.ycsite_member_box .c_label {
+	border-bottom: solid 1px #ededec;
+}
+
+.ycsite_member_box .c_label .c_title {
+	font-size: 20px;
+	font-weight: bold;
+	float: left;
+	color: #2f2f30;
+	padding-bottom: 10px;
+	letter-spacing: 2px;
+}
+
+.ycsite_member_box .c_label .c_title a {
+	color: #9b7145;
+}
+
+.ycsite_member_box .c_label .c_sub {
+	float: right;
+	padding-top: 10px;
+	color: #89898a;
+}
+
+.ycsite_member_box .c_label .c_sub  a {
+	color: #a17649;
+	font-weight: bold;
+}
+
+.ycsite_member_box .c_form .c_small {
+	color: #919191;
+}
+
+.ycsite_member_box .c_form {
+	padding: 50px 300px 20px 200px;
+}
+
+.ycsite_member_box .c_form .control-label {
+	color: #343841;
+}
+
+.ycsite_member_box .c_form .form-control {
+	height: 40px;
+}
+
+.ycsite_member_box .c_form .btn-default {
+	background-color: #bd9b77;
+	color: #fff;
+	border-radius: 0px;
+}
+
+
+
+
+.ycsite_user_left
 {
-	background-color:#fdfdfd;
-} 
+	background-color:#fafafa;
+	border-bottom:solid 1px #f8f8f8;
+	float:left;
+	width:220px;
+	padding-bottom:400px;
+}
 
+
+.ycsite_user_left .c_head
+{
+	background-color:#bd9b77;
+	height:60px;
+	color:#fff8f2;
+	line-height:60px;
+	text-indent:30px;
+	font-size:16px;
+}
+
+.ycsite_user_left .c_item
+{
+	height:60px;
+	padding:20px;
+	border-bottom:solid 1px #f0f0f0;
+}
+
+.ycsite_user_left .c_item .c_left
+{
+	
+	height:22px;
+	width:23px;
+	float:left;
+	
+}
+.ycsite_user_left .c_center
+{
+	text-indent:20px;
+	width:130px;
+	font-size:14px;
+	float:left;
+}
+.ycsite_user_left .c_right
+{
+	background-position:-200px -130px;
+	width:23px;
+	height:22px;
+	float:left;
+}
+
+.ycsite_user_left .c_active
+{
+	background-color:#fbf7f3;
+	border-left:solid 1px #c19f7b;
+}
+.ycsite_user_left .c_num_0 .c_left
+{
+	background-position:-200px -100px;
+}
+.ycsite_user_left .c_num_1 .c_left
+{
+	background-position:-223px -100px;
+}
+
+.ycsite_user_left .c_num_2 .c_left
+{
+	background-position:-251px -100px;
+}
+
+.ycsite_user_left .c_num_3 .c_left
+{
+	background-position:-276px -100px;
+}
+.ycsite_user_right
+{
+	float:left;
+	width:880px;
+	
+}
+
+.ycsite_user_right .c_u_title
+{
+	height:60px;
+	border-bottom:solid 1px #f5f5f5;
+	color:#645f5b;
+	text-indent:50px;
+	font-size:16px;
+	line-height:60px;
+}
+
+.ycsite_user_right .c_form
+{
+	padding:50px 400px 0px 50px;
+}
+.ycsite_user_right .c_form .control-label
+{
+	color:#645f5b;
+	font-size:14px;
+}

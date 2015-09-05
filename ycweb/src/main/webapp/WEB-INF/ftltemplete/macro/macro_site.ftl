@@ -2,7 +2,7 @@
 
 
 
-<#assign a_macro_site_resources_thems_js=["lib/jquery/jquery-last.min.js","lib/jquery/jquery-site.min.js","lib/bootstrap-3.3.5/js/bootstrap.min.js","yclib/js/yclib.js"] >
+<#assign a_macro_site_resources_thems_js=["lib/jquery/jquery-last.min.js","lib/jquery/jquery-site.min.js","lib/bootstrap-3.3.5/js/bootstrap.min.js","zapjs/zapapi.js","zapjs/zapfunc.js","yclib/js/yccall.js","yclib/js/yclib.js"] >
 
 
 <#assign a_macro_site_resources_thems_css=["lib/bootstrap-3.3.5/css/bootstrap.min.css","zapweb/css/w.css","yclib/css/ycbase.css"] >
@@ -33,9 +33,9 @@
 			</div>
 			<div class="c_right">
 				<div class="ycbase_h_14"></div>
-				<div class="c_user">
-					<div class="c_button ycbase_img_ycico">登陆</div>
-					<div class="c_button ycbase_img_ycico">注册</div>
+				<div class="c_user" id="yc_id_top_nav_user">
+					<div class="c_button ycbase_img_ycico"> <@m_web_html_href "member_login"  "登录"/></div>
+					<div class="c_button ycbase_img_ycico"><@m_web_html_href "member_reg"  "注册"/></div>
 				</div>
 				<div class="w_h_20 w_clear"></div>
 				<div class="c_search ycbase_img_ycico">
@@ -164,3 +164,52 @@
 
 </#macro>
 
+
+
+
+<#macro m_site_user_menu p_index=0>
+
+	<div class="ycsite_user_left">
+		<div class="c_head">个人中心</div>
+		
+		<@m_site_user_item p_num=0 p_index=p_index p_link="user_set?" p_text="账户设置" />
+		<@m_site_user_item p_num=1 p_index=p_index p_link="user_password?" p_text="密码设置" />
+		<@m_site_user_item p_num=2 p_index=p_index p_link="user_collect?" p_text="我的收藏" />
+		<@m_site_user_item p_num=3 p_index=p_index p_link="" p_text="我的评论" />
+		
+
+	</div>
+</#macro>
+
+<#macro m_site_user_item p_num=0 p_index=0 p_link="" p_text="">
+
+		<div class="c_item c_num_${p_num} <#if p_index==p_num> c_active </#if>">
+			<div class="c_left ycbase_img_ycico"></div>
+			<div class="c_center"><@m_web_html_href p_link p_text/></div>
+			<#if p_index==p_num><div class="c_right ycbase_img_ycico"></div></#if>
+			<div class="w_clear"></div>
+		</div>
+
+</#macro>
+
+
+
+<#macro m_site_form_input p_id="" p_text="" p_value="" p_type="text" p_attr="" >
+
+							<div class="form-group">
+				    			<label for="${p_id}" class="col-sm-3 control-label">${p_text}： </label>
+					    		<div class="col-sm-9">
+					      			<input type="${p_type}" class="form-control"  name="${p_id}" value="${p_value}"  id="${p_id}" placeholder="请输入${p_text}" ${p_attr}/>
+					    		</div>
+				  			</div>
+
+</#macro>
+
+<#macro m_site_form_button p_text="" p_click="">
+							<div class="form-group">
+				    			<label class="col-sm-3 control-label"></label>
+					    		<div class="col-sm-9">
+					      			<button type="button" onclick="${p_click}" class="btn btn-default btn-lg btn-block">${p_text}</button>
+					    		</div>
+				  			</div>
+</#macro>

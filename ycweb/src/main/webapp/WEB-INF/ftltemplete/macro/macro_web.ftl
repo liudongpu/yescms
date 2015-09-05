@@ -114,6 +114,13 @@
 <#assign a_macro_web_sessionhelper=b_method.upClass("com.srnpr.zapweb.helper.WebSessionHelper") />
 </#macro>
 
+<#-- 初始化用户脚本  -->
+<#macro m_web_init_membercode>
+<@m_web_init_sessionhelper />
+
+<#assign a_macro_web_membercode=b_method.upClass("com.srnpr.zapweb.websupport.OauthSupport").upOauthInfo(a_macro_web_sessionhelper.upCookie("zapfunc-access_token")).getUserCode() />
+</#macro>
+
 
 <#-- 格式化脚本  -->
 <#macro m_web_format_money p_money=0 ><#if ((p_money?number)<=0)>暂无<#else>${(p_money?number?string("#.##")?number?string.currency)}</#if></#macro>
@@ -142,6 +149,8 @@
 	<#local p_link=p_link+a_macro_web_html_attr>
 </#if>
 <a href="${p_link}" >${p_text}</a></#macro>
+
+
 
 <#macro m_web_html_hidden p_id="" p_value="">
 	<input type="hidden" name="${p_id}" id="${p_id}" value="${p_value}"/>
