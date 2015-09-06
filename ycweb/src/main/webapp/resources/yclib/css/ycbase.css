@@ -393,6 +393,22 @@ a, a:hover {
 
 .ycsite_index_main img {
 	width: 100%;
+	height:800px;
+	
+}
+
+.ycsite_index_main img {
+	width: 100%;
+	height:800px;
+	
+}
+.ycsite_index_main .carousel-indicators li
+{
+	  border: 1px solid #88725d;
+}
+.ycsite_index_main  .carousel-indicators .active
+{
+	  background-color: #88725d;
 }
 
 .ycsite_nl_box .c_item {
@@ -1057,5 +1073,84 @@ a, a:hover {
 {
 	color:#b6844f;
 	font-size:14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ycsite_sti_box_left {
+	background-color: #fafafa;
+	border-bottom: solid 1px #f8f8f8;
+	float: left;
+	width: 220px;
+	padding-bottom: 500px;
+}
+
+
+
+.ycsite_sti_box_left .c_item {
+	height: 60px;
+	padding: 20px;
+	border-bottom: solid 1px #f0f0f0;
+}
+
+.ycsite_sti_box_left .c_item .c_left {
+	height: 22px;
+	width: 23px;
+	float: left;
+}
+
+.ycsite_sti_box_left .c_center {
+	text-indent: 20px;
+	width: 130px;
+	font-size: 14px;
+	float: left;
+}
+
+.ycsite_sti_box_left .c_right {
+	background-position: -200px -130px;
+	width: 23px;
+	height: 22px;
+	float: left;
+}
+
+.ycsite_sti_box_left .c_active {
+	background-color: #fff;
+	border-left: solid 3px #b09177;
+}
+
+
+.ycsite_sti_box_right
+{
+	float:left;
+	width:880px;
+}
+.ycsite_sti_box_right .c_title
+{
+	height:60px;
+	color:#645f5b;
+	line-height:60px;
+	font-size:16px;
+	text-indent:30px;
+	font-weight:bold;
+	border-bottom: solid 1px #f0f0f0;
+	
+}
+.ycsite_sti_box_right .c_info
+{
+	padding:30px;
 }
 

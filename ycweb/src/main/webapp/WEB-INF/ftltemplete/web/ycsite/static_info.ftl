@@ -3,29 +3,35 @@
 
 <@m_web_init_dbcall />
 <@m_web_init_sessionhelper />
-<#assign  a_info=a_macro_web_dbcall.upOne("yc_news","uid",a_macro_web_sessionhelper.upRequest("u_id")) />
+
+<#assign  a_code=a_macro_web_sessionhelper.upRequest("u_code") />
+<#assign  a_info=a_macro_web_dbcall.upOne("yc_static","code",a_code) />
+
+<#assign  a_list=a_macro_web_dbcall.queryAll("yc_static","","zid","","system_cid",a_info["system_cid"]) />
 
 <@m_site_header p_title=a_info["title"]/>
 <@m_site_body_begin />
-<@m_site_body_nav p_text=["正道资讯",a_info["title"]] p_link=["news_list"]  />
+<@m_site_body_nav p_text=["帮助中心",a_info["title"]]   />
 
 
-<div class="ycsite_ni_box ycbase_body_back_layout" >
-	<div class="ycsite_common_info_left">
-		<div class="w_h_30"></div>
-		<h1 class="yctop_h1">${a_info["title"]}</h1>
-		<div class="w_h_20"></div>
-		<div class="yctop_desc">发表时间：${a_info["create_time"]}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文章来源：正道拍卖  </div>
-		<hr class="yctop_hr"/>
-
-		<div class="yctop_info">${a_info["content"]}</div>		
-		<@m_site_comment_list p_uid=a_info["uid"] p_title=a_info["title"] p_url="news_info?u_id="+a_info["uid"] />
-	</div>	
-	<div class="ycsite_common_info_right">
-		<@m_site_sub_list />
+<div class="ycsite_sti_box ycbase_body_back_layout" >
+	<div class="ycsite_sti_box_left">
+		<#list a_list as el>
+		<div class="c_item  <#if el["code"]==a_code> c_active </#if>">
+			<div class="c_left"></div>
+			<div class="c_center"><@m_web_html_href "static_info?u_code="+el["code"] el["title"]/></div>
+			<#if el["code"]==a_code><div class="c_right ycbase_img_ycico"></div></#if>
+			<div class="w_clear"></div>
+		</div>
+		</#list>
 	</div>
+	<div class="ycsite_sti_box_right">
+		<div class="c_title">${a_info["title"]}</div>
+		<div class="c_info">${a_info["content"]}</div>
+	</div>
+	
 	<div class="w_clear"></div>
 </div>
 
 <@m_site_body_end />
-<@m_site_footer p_initjs=""/>
+<@m_site_footer  />

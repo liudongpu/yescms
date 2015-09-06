@@ -19,7 +19,7 @@
 	
 	<div class="ycbase_header_layout">
 		<div class="c_box">
-			<div class="c_logo ycbase_img_ycico"></div>
+			<div class="c_logo ycbase_img_ycico w_pointer" onclick="location.href='index'"></div>
 			<div class="c_nav">
 				<div class="c_nav_h"></div>
 				<ul class="w_ul">
@@ -59,13 +59,13 @@
 			<div class="c_left">
 				<div class="c_nav">
 					<ul class="w_ul">
-						<li><a href="">正道简介</a></li>
-						<li><a href="">竞买流程</a></li>
-						<li><a href="">竞买须知</a></li>
-						<li><a href="">委托须知</a></li>
-						<li><a href="">拍卖规则</a></li>
-						<li><a href="">联系方式</a></li>
-						<li class="c_nav_last"><a href="">友情链接</a></li>
+						<li><@m_web_html_href "static_info?u_code=4653000100010001" "正道简介"/>	</li>
+						<li><@m_web_html_href "static_info?u_code=4653000100010002" "竞买流程"/></li>
+						<li><@m_web_html_href "static_info?u_code=4653000100010003" "竞买须知"/></li>
+						<li><@m_web_html_href "static_info?u_code=4653000100010004" "委托须知"/></li>
+						<li><@m_web_html_href "static_info?u_code=4653000100010005" "拍卖规则"/></li>
+						<li><@m_web_html_href "static_info?u_code=4653000100010006" "联系方式"/></li>
+						<li class="c_nav_last"><@m_web_html_href "static_info?u_code=4653000100010007" "友情链接"/></li>
 						
 					</ul>
 				</div>
