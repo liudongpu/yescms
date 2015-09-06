@@ -14,7 +14,7 @@ var yclib = {
 
 	init_base : function() {
 
-		var sAccessToken = zapfunc.f.cookie("access_token");
+		var sAccessToken = yccall.up_access_token();
 		if (sAccessToken) {
 			var sMemberName = zapfunc.f.cookie("member_name");
 			zapapi.c.api_token=sAccessToken;
@@ -24,6 +24,28 @@ var yclib = {
 
 	func_member_reg : function() {
 
+	},
+	page_search:function()
+	{
+		var sKeyWord=$('#ycbase_header_layout_search').val();
+		zapfunc.f.to_url('search_page?u_keyword='+sKeyWord);
+	},
+	search_change:function(iIndex)
+	{
+		for(var i=0;i<2;i++)
+			{
+			if(i==iIndex)
+				{
+			$('#ycsite_sp_box_tab_nav_'+i).addClass('c_active');
+			$('#ycsite_sp_box_tab_item_'+i).show();
+				}
+			else
+				{
+				$('#ycsite_sp_box_tab_nav_'+i).removeClass('c_active');
+				$('#ycsite_sp_box_tab_item_'+i).hide();
+				}
+			}
+		
 	}
 
 };

@@ -51,8 +51,13 @@
 		<div class="c_box c_bb">
 			<div class="w_fw_b w_fs_14 yctop_c_7">相关信息：</div>
 		</div>
+		
+		
 	</div>
-	
+	<div class="c_bottom">
+		<@m_site_comment_list p_uid=a_info["uid"] p_title=a_info["title"] p_url="good_info?u_id="+a_info["uid"] />
+	</div>
+	<div class="w_h_100"></div>
 </div>
 
 <@m_site_body_end />

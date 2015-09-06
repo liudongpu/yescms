@@ -39,7 +39,8 @@
 				</div>
 				<div class="w_h_20 w_clear"></div>
 				<div class="c_search ycbase_img_ycico">
-					<input class="c_input" type="text"/>
+					<input id="ycbase_header_layout_search" class="c_input" type="text"  placeholder="站内搜索"/>
+					<span class="c_target" onclick="yclib.page_search()">&nbsp;</span>
 				</div>
 			</div>
 		</div>
@@ -175,7 +176,8 @@
 		<@m_site_user_item p_num=0 p_index=p_index p_link="user_set?" p_text="账户设置" />
 		<@m_site_user_item p_num=1 p_index=p_index p_link="user_password?" p_text="密码设置" />
 		<@m_site_user_item p_num=2 p_index=p_index p_link="user_collect?" p_text="我的收藏" />
-		<@m_site_user_item p_num=3 p_index=p_index p_link="" p_text="我的评论" />
+		<@m_site_user_item p_num=3 p_index=p_index p_link="user_comment?" p_text="我的评论" />
+
 		
 
 	</div>
@@ -213,3 +215,64 @@
 					    		</div>
 				  			</div>
 </#macro>
+
+
+
+
+
+<#macro m_site_comment_list p_uid="" p_title="" p_url=""  >
+
+<div class="ycsite_comment_info">
+	<div class="yccomment_box_info" id="yccomment_box_info_${p_uid}">
+		<div class="yccomment_box_label">
+			文章评论
+		</div>
+		<div  class="yccomment_box_list">
+		</div>
+		<div  class="yccomment_box_none w_display ">
+			暂无评论
+		</div>
+		
+		<div class="yccomment_box_label">
+			发表
+		</div>
+		<div  class="yccomment_box_add w_display">
+			<form>
+				<div class="yccomment_box_add_text">
+					<@m_web_html_hidden p_id="infoUid" p_value=p_uid />
+					<@m_web_html_hidden p_id="infoTitle" p_value=p_title />
+					<@m_web_html_hidden p_id="infoUrl" p_value=p_url />
+					<textarea id="note" name="note"></textarea>
+				</div>
+				<div class="yccomment_box_add_footer">
+					<input class="yccomment_box_login_btn" type="button" value="发表" onclick="yccall.comment_submit(this)" />
+				</div>
+			</form>
+		</div>
+		<div  class="yccomment_box_login w_display">
+			<div class="yccomment_box_login_text">
+				游客您好，登录 后可以发表评论，如果您还没有帐号可以现在 <@m_web_html_href "member_reg" "注册"/>	。
+			</div>
+			<div class="yccomment_box_login_footer">
+				<input class="yccomment_box_login_btn" type="button" value="发表" />
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<@m_web_html_script "yccall.comment_init('${p_uid}')" />
+
+</#macro>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -143,6 +143,12 @@ body,html
 	position: absolute;
 }
 
+
+.w_pointer
+{
+	cursor:pointer;
+}
+
 .w_border_none
 {
 	border: none;
