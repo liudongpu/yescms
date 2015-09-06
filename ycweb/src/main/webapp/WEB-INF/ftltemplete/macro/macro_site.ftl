@@ -269,7 +269,34 @@
 
 
 
+<#macro m_site_share>
+<div class="w_h_50"></div>
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style"><span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_weixin"></a>
+<a class="jiathis_button_renren"></a>
+<a class="jiathis_button_copy"></a>
+<a class="jiathis_button_email"></a>
+<a class="jiathis_button_cqq"></a>
+<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+</div>
+<div class="w_h_50"></div>
+<script type="text/javascript" >
+var jiathis_config={
+	siteNum:6,
+	sm:"qzone,weixin,tsina,cqq,copy,email",
+	summary:"",
+	shortUrl:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 
+
+</#macro>
 
 
 
