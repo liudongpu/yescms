@@ -10,7 +10,7 @@
 
 <div class="ycsite_user_box  ycbase_body_back_layout">
 
-	<@m_site_user_menu p_index=0 />
+	<@m_site_user_menu p_index=3 />
 	
 	<div class="ycsite_user_right">
 		<div class="c_u_title">我的评论</div>

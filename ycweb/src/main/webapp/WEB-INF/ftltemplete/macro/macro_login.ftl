@@ -10,8 +10,8 @@
 			</div>
 			<div class="w_fr w_mt_30">
 				<ul class="w_ul">
-					<li><a href="http://www.ichsy.com" target="_blank">官网首页</a></li>
-					<li><a href="" target="_blank">家有汇</a></li>
+					<li><a href="" target="_blank">首页</a></li>
+					<li><a href="" target="_blank">管理后台 </a></li>
 				</ul>
 			</div>
 		</div>
@@ -41,14 +41,14 @@
 										<input class="btn btn-large btn-danger" id="id_manage_login_login_submit" type="button"
 											zapweb_attr_operate_id="115793e80b38485aaba8223e0ea101b6"
 											onclick="zapjs.zw.login_post(this)" value="登录"/>
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>忘记密码</a>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									</div>
 									<input type="hidden" id="zapjs_zw_login_sucess_target"
 										name="zapjs_zw_login_sucess_target" value="../manage/home" />
 
 								</form>
 								<div class="w_h_20"></div>
-								<div class="w_al_center c_login_desc">官方联系电话：010-57721677</div>
+								<div class="w_al_center c_login_desc">官方联系电话：010-88888888</div>
 							</div>
 							
 							<div class="c_login_version">当前系统版本：${b_method.upClass("com.srnpr.zapcom.basesupport.VersionSupport").upVersionFullName()}</div>
@@ -65,18 +65,17 @@
 
 		<div class=" w_m_auto c_login_footer c_login_width">
 
-			<div class="w_fl w_mt_15">北京乾和晟云电子商务有限公司   版权所有</div>
+			<div class="w_fl w_mt_15">北京正道拍卖有限公司   版权所有</div>
 			<div class="w_fr w_mt_15">
 				<ul class="w_ul">
-					<li><a href="http://www.ichsy.com/about.html"
+					<li><a href=""
 						target="_blank">关于我们</a></li>
 					<li><a
-						href="http://www.ichsy.com/contact.html"
+						href=""
 						target="_blank">联系我们</a></li>
-					<li><a href="http://www.ichsy.com/product.html"
-						target="_blank">产品中心</a></li>
+					
 					<li><a
-						href="http://www.ichsy.com/recruit.html"
+						href=""
 						target="_blank">招贤纳士</a></li>
 					<li><a
 						href=""
