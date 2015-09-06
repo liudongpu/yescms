@@ -123,6 +123,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>yhmanage</finalName>
+        <finalName>ycweb</finalName>
     </build>
 </project>
