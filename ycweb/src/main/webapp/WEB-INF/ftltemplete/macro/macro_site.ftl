@@ -14,7 +14,7 @@
 <#macro m_site_header p_title="" >
 	
 	<@m_web_html_begin p_title=p_title  p_js=a_macro_site_resources_thems_js p_css=a_macro_site_resources_thems_css  />
-
+	<link rel="shortcut icon" href="http://img.jkcdn.yxl9.cn//sfiles/ico/favicon.ico" />
 	<@m_web_body_begin />
 	
 	<div class="ycbase_header_layout">
