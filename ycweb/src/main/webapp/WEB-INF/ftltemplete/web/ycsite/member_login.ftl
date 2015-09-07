@@ -28,7 +28,7 @@
 	    			<label class="col-sm-3 control-label"></label>
 		    		<div class="col-sm-9">
 		    			<div class="w_h_20"></div>
-		      			<@m_web_html_href "" "忘记密码？" />
+		      			<@m_web_html_href "member_forget" "忘记密码？" />
 		    		</div>
 	  			</div>
 				<@m_site_form_button p_text="登录" p_click="yccall.member_login(this)"/>

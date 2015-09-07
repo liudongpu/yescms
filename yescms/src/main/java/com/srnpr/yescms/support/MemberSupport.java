@@ -5,8 +5,10 @@ import java.util.Date;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.time.DateUtils;
 
+import com.srnpr.yescms.member.model.MemberForgetInput;
 import com.srnpr.yescms.member.model.MemberLoginInput;
 import com.srnpr.yescms.member.model.MemberRegInput;
+import com.srnpr.yescms.member.model.MemberResetInput;
 import com.srnpr.yescms.member.model.MemberResult;
 import com.srnpr.yescms.member.model.UserInfoInput;
 import com.srnpr.yescms.member.model.UserPassInput;
@@ -14,6 +16,7 @@ import com.srnpr.zapcom.baseclass.BaseClass;
 import com.srnpr.zapcom.basehelper.FormatHelper;
 import com.srnpr.zapcom.basehelper.SecrurityHelper;
 import com.srnpr.zapcom.basemodel.MDataMap;
+import com.srnpr.zapcom.basesupport.MailSupport;
 import com.srnpr.zapdata.dbdo.DbUp;
 import com.srnpr.zapweb.helper.WebHelper;
 import com.srnpr.zapweb.webdo.WebConst;
@@ -227,4 +230,85 @@ public class MemberSupport extends BaseClass {
 
 	}
 
+	/**
+	 * 忘记密码
+	 * 
+	 * @param input
+	 * @return
+	 */
+	public MWebResult memberForget(MemberForgetInput input) {
+
+		MWebResult result = new MWebResult();
+
+		MDataMap mDataMap = DbUp.upTable("mc_member_info").one("member_email",
+				input.getMemberEmail());
+
+		if (result.upFlagTrue() && mDataMap != null && mDataMap.isEmpty()) {
+
+			result.inErrorMessage(965305009);
+		}
+
+		if (result.upFlagTrue()) {
+
+			String sResetToken = new Date().getTime() + "-"
+					+ WebHelper.upUuid();
+
+			mDataMap.inAllValues("reset_token", sResetToken);
+			DbUp.upTable("mc_member_info").dataUpdate(mDataMap, "reset_token",
+					"zid");
+
+			new MailSupport().sendMail(
+					mDataMap.get("member_email"),
+					bInfo(965305010),
+					bInfo(965305011,
+							StringUtils.substringBeforeLast(
+									input.getResetTarget(), "/")
+									+ "/member_reset?u_code=" + sResetToken));
+
+		}
+
+		return result;
+	}
+
+	public MWebResult memberReset(MemberResetInput input) {
+		MWebResult result = new MWebResult();
+
+		if (result.upFlagTrue()) {
+			long lTime = Long.parseLong(StringUtils.substringBefore(
+					input.getResetToken(), "-"));
+
+			long lNow = new Date().getTime();
+
+			// 判断时间差需要在一天以内
+			if (Math.abs(lNow - lTime) > 1000 * 3600 * 24) {
+				result.inErrorMessage(965305012);
+			}
+
+		}
+
+		if (result.upFlagTrue()) {
+			if (!StringUtils.equals(input.getPassword(), input.getRepass())) {
+				result.inErrorMessage(965305003);
+			}
+		}
+
+		if (result.upFlagTrue()) {
+
+			MDataMap mDataMap = DbUp.upTable("mc_member_info").one(
+					"reset_token", input.getResetToken());
+
+			if (mDataMap != null && mDataMap.size() > 0) {
+				mDataMap.inAllValues("reset_token", "", "member_pass",
+						SecrurityHelper.MD5(input.getPassword()));
+
+				DbUp.upTable("mc_member_info").dataUpdate(mDataMap,
+						"reset_token,member_pass", "zid");
+			} else {
+				result.inErrorMessage(965305012);
+			}
+
+		}
+
+		return result;
+	}
 }

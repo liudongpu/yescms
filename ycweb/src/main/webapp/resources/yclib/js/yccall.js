@@ -29,6 +29,25 @@ var yccall = {
 		zapapi.api_form(oEl, "com_srnpr_yescms_member_api_MemberLogin",
 				yccall.member_success);
 	},
+	
+	
+	member_forget : function(oEl) {
+		zapapi.api_form(oEl, "com_srnpr_yescms_member_api_MemberForget",
+				function() {
+					zapapi.m.modal({
+						content : '发送邮件成功，请到邮箱继续下一步操作 '
+					})
+				});
+	},
+	member_reset : function(oEl) {
+		zapapi.api_form(oEl, "com_srnpr_yescms_member_api_MemberReset",
+				function() {
+					zapapi.m.modal({
+						content : '重置密码成功，请重新登陆系统 '
+					})
+				});
+	},
+	
 	user_pass : function(oEl) {
 		zapapi.api_form(oEl, "com_srnpr_yescms_member_api_UserPass",
 				function() {
