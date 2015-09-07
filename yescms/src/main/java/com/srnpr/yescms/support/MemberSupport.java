@@ -243,7 +243,7 @@ public class MemberSupport extends BaseClass {
 		MDataMap mDataMap = DbUp.upTable("mc_member_info").one("member_email",
 				input.getMemberEmail());
 
-		if (result.upFlagTrue() && mDataMap != null && mDataMap.isEmpty()) {
+		if (result.upFlagTrue() && !(mDataMap != null && mDataMap.size() > 0)) {
 
 			result.inErrorMessage(965305009);
 		}
