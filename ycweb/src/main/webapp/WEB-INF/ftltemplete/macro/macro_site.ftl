@@ -303,6 +303,43 @@ var jiathis_config={
 
 
 
+<#macro m_site_pagenav  p_page_info>
+
+
+<div class="pagination">
+
+	<#if (p_page_info.getPageSize()>0)>
+	  <ul>
+		<#if (p_page_info.getPageIndex()>1)>
+			<li><a href="${a_macro_web_sessionhelper.upReplaceUrl("",a_macro_web_pagenav_pageindex,(p_page_info.getPageIndex()-1)?string)}">上一页</a></li>
+		<#else>
+			<li class="disabled"><a>上一页</a></li>
+		</#if>
+	
+	    <#local max=(p_page_info.getPageIndex()+2)>
+	    <#if (max>p_page_info.getPageMax())><#local max=p_page_info.getPageMax()></#if>
+	    
+	    <#local min=(p_page_info.getPageIndex()-(2+p_page_info.getPageIndex()-max))>
+	    <#if (min<1)><#local min=1></#if>
+	    
+		<#list min..max as e>
+			<#if (e>0)>
+			<li <#if e==p_page_info.getPageIndex()> class="active"</#if> ><a href="${a_macro_web_sessionhelper.upReplaceUrl("",a_macro_web_pagenav_pageindex,e?c   ) }">${e}</a></li>
+			</#if>
+		</#list>
+	
+	    <#if (p_page_info.getPageIndex()<p_page_info.getPageMax())>
+			<li><a href="${a_macro_web_sessionhelper.upReplaceUrl("",a_macro_web_pagenav_pageindex,(p_page_info.getPageIndex()+1)?c)}">下一页</a></li>
+		<#else>
+			<li class="disabled"><a>下一页</a></li>
+		</#if>
+	  </ul>
+	</#if>
+  
+  
+	
+</div>
 
 
 
+</#macro>

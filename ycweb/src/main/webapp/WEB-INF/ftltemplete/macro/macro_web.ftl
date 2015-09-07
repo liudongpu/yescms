@@ -13,6 +13,8 @@
 <#assign a_macro_web_html_attr=".html" >
 
 
+<#assign a_macro_web_pagenav_pageindex="y_page_index" >
+
 <#-- 项目特殊样式 -->
 
 
