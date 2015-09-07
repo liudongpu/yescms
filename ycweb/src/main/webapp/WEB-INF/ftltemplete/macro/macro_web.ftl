@@ -9,8 +9,8 @@
 <#assign a_macro_web_img_link="../../" >
 
 
-<#-- 标准页面后缀路径 -->
-<#assign a_macro_web_html_attr=".html" >
+<#-- 标准页面后缀路径 .html -->
+<#assign a_macro_web_html_attr="" >
 
 
 <#assign a_macro_web_pagenav_pageindex="y_page_index" >

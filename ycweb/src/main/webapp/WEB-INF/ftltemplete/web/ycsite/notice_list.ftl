@@ -5,7 +5,7 @@
 <@m_web_init_sessionhelper />
 
 
-<#assign   a_pagedata=a_macro_web_dbcall.upPageData("yc_notice","","-orderid,-create_time","",a_macro_web_sessionhelper.upRequest(a_macro_web_pagenav_pageindex),2) />
+<#assign   a_pagedata=a_macro_web_dbcall.upPageData("yc_notice","","-orderid,-create_time","",a_macro_web_sessionhelper.upRequest(a_macro_web_pagenav_pageindex),"10") />
 
 
 <@m_site_header p_title="正道公告"/>

@@ -1,8 +1,12 @@
 
  <#include "../../macro/macro_site.ftl" />
 <@m_web_init_dbcall />
+<@m_web_init_sessionhelper />
 <@m_web_init_membercode />
 <#assign  a_list=a_macro_web_dbcall.queryAll("mc_user_collect","","-zid","","member_code",a_macro_web_membercode) />
+
+<#assign   a_pagedata=a_macro_web_dbcall.upPageData("mc_user_collect","","-zid","",a_macro_web_sessionhelper.upRequest(a_macro_web_pagenav_pageindex),"10","member_code",a_macro_web_membercode) />
+
 
 <@m_site_header p_title="我的收藏"/>
 <@m_site_body_begin />
@@ -33,7 +37,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<#list a_list as el>
+							<#list a_pagedata.getPageData() as el>
 								<tr onclick="<@m_web_event_href p_link=el["info_url"] />">
 									
 									<td>
@@ -51,7 +55,9 @@
 							</#list>
 						</tbody>
 					</table>
+					<@m_site_pagenav a_pagedata.getPageInfo() />
 				</div>
+				
 		</div>
 	</div>
 

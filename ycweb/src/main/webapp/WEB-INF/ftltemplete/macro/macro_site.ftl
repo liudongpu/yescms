@@ -305,37 +305,56 @@ var jiathis_config={
 
 <#macro m_site_pagenav  p_page_info>
 
-
-<div class="pagination">
-
+<#local l_number=2 />
+<div class="yctop_pagenav">
+	<div class="w_clear w_h_50"></div>
+	<div class="yctop_pagenav_box" >
 	<#if (p_page_info.getPageSize()>0)>
 	  <ul>
 		<#if (p_page_info.getPageIndex()>1)>
-			<li><a href="${a_macro_web_sessionhelper.upReplaceUrl("",a_macro_web_pagenav_pageindex,(p_page_info.getPageIndex()-1)?string)}">上一页</a></li>
+			<li  class="c_item"><a href="${a_macro_web_sessionhelper.upReplaceUrl("",a_macro_web_pagenav_pageindex,(p_page_info.getPageIndex()-1)?string)}">上一页</a></li>
 		<#else>
-			<li class="disabled"><a>上一页</a></li>
+			<li class="c_disabled"><a>上一页</a></li>
 		</#if>
-	
-	    <#local max=(p_page_info.getPageIndex()+2)>
+
+
+		<#local max=(p_page_info.getPageIndex()+l_number)>
 	    <#if (max>p_page_info.getPageMax())><#local max=p_page_info.getPageMax()></#if>
 	    
-	    <#local min=(p_page_info.getPageIndex()-(2+p_page_info.getPageIndex()-max))>
+	    <#local min=(p_page_info.getPageIndex()-(l_number+p_page_info.getPageIndex()-max))>
 	    <#if (min<1)><#local min=1></#if>
+	    
+	    
+	    
+		<#if ((p_page_info.getPageIndex()>1)&&(max>l_number+1))>
+			
+			<li class="c_item"><a href="${a_macro_web_sessionhelper.upReplaceUrl("",a_macro_web_pagenav_pageindex,"1"  ) }">1</a></li>
+			<li ><a>...</a></li>
+		</#if>
+
+	
 	    
 		<#list min..max as e>
 			<#if (e>0)>
-			<li <#if e==p_page_info.getPageIndex()> class="active"</#if> ><a href="${a_macro_web_sessionhelper.upReplaceUrl("",a_macro_web_pagenav_pageindex,e?c   ) }">${e}</a></li>
+			<li  class="c_item <#if e==p_page_info.getPageIndex()> c_active</#if>" ><a href="${a_macro_web_sessionhelper.upReplaceUrl("",a_macro_web_pagenav_pageindex,e?c   ) }">${e}</a></li>
 			</#if>
 		</#list>
+
+		<#if ((p_page_info.getPageIndex()+l_number)<p_page_info.getPageMax())>
+			<li ><a>...</a></li>
+			<li class="c_item"><a href="${a_macro_web_sessionhelper.upReplaceUrl("",a_macro_web_pagenav_pageindex,p_page_info.getPageMax()?c   ) }">${p_page_info.getPageMax()}</a></li>
+			
+		</#if>
 	
 	    <#if (p_page_info.getPageIndex()<p_page_info.getPageMax())>
-			<li><a href="${a_macro_web_sessionhelper.upReplaceUrl("",a_macro_web_pagenav_pageindex,(p_page_info.getPageIndex()+1)?c)}">下一页</a></li>
+			<li  class="c_item"><a href="${a_macro_web_sessionhelper.upReplaceUrl("",a_macro_web_pagenav_pageindex,(p_page_info.getPageIndex()+1)?c)}">下一页</a></li>
 		<#else>
-			<li class="disabled"><a>下一页</a></li>
+			<li class="c_disabled"><a>下一页</a></li>
 		</#if>
 	  </ul>
 	</#if>
-  
+  	</div>
+  	<div class="w_clear w_h_50"></div>
   
 	
 </div>
