@@ -144,11 +144,11 @@
 
 
 <#-- 超链接  -->
-<#macro m_web_html_href  p_link p_text>
+<#macro m_web_html_href  p_link p_text p_target="">
 <#if ((p_link!="")&&!(p_link?contains("?")))>
 	<#local p_link=p_link+a_macro_web_html_attr>
 </#if>
-<a href="${p_link}" >${p_text}</a></#macro>
+<a href="${p_link}" target="${p_target}">${p_text}</a></#macro>
 
 
 

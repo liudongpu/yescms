@@ -8,6 +8,7 @@ import org.apache.commons.lang.time.DateUtils;
 import com.srnpr.yescms.member.model.MemberLoginInput;
 import com.srnpr.yescms.member.model.MemberRegInput;
 import com.srnpr.yescms.member.model.MemberResult;
+import com.srnpr.yescms.member.model.UserInfoInput;
 import com.srnpr.yescms.member.model.UserPassInput;
 import com.srnpr.zapcom.baseclass.BaseClass;
 import com.srnpr.zapcom.basehelper.FormatHelper;
@@ -66,8 +67,13 @@ public class MemberSupport extends BaseClass {
 	public MemberResult memberLogin(MemberLoginInput input) {
 		MemberResult result = new MemberResult();
 
-		MDataMap mMemberMap = DbUp.upTable("mc_member_info").one(
-				"member_email", input.getLoginName().trim());
+		if (result.upFlagTrue() && (StringUtils.isBlank(input.getLoginName()))) {
+			result.inErrorMessage(965305008);
+		}
+
+		MDataMap mMemberMap = DbUp.upTable("mc_member_info").oneWhere("", "",
+				"member_email=:login_name or member_phone=:login_name",
+				"login_name", input.getLoginName().trim());
 
 		if (result.upFlagTrue() && (mMemberMap == null || mMemberMap.isEmpty())) {
 			result.inErrorMessage(965305004);
@@ -181,6 +187,40 @@ public class MemberSupport extends BaseClass {
 				result.inErrorMessage(965305007);
 			}
 
+		}
+
+		return result;
+
+	}
+
+	public MWebResult userInfo(UserInfoInput input, String sMemebrCode) {
+
+		MWebResult result = new MWebResult();
+
+		if (result.upFlagTrue()) {
+
+			if (StringUtils.isNotBlank(input.getMemberPhone())) {
+
+				MDataMap mPhoneMember = DbUp.upTable("mc_member_info").one(
+						"member_phone", input.getMemberPhone().trim());
+				if (mPhoneMember != null
+						&& !StringUtils.equals(mPhoneMember.get("member_code"),
+								sMemebrCode)) {
+
+					result.inErrorMessage(965305002);
+				}
+
+			}
+
+		}
+
+		if (result.upFlagTrue()) {
+			MDataMap mDataMap = new MDataMap("member_phone", input
+					.getMemberPhone().trim(), "real_name", input.getRealName(),
+					"member_code", sMemebrCode);
+
+			DbUp.upTable("mc_member_info").dataUpdate(mDataMap,
+					"member_phone,real_name", "member_code");
 		}
 
 		return result;

@@ -33,6 +33,7 @@ a, a:hover {
 .ycbase_header_layout .c_box {
 	width: 1100px;
 	margin: auto;
+	position:relative;
 }
 
 .ycbase_header_layout .c_logo {
@@ -72,9 +73,12 @@ a, a:hover {
 
 .ycbase_header_layout  .c_user {
 	color: #a28972;
+	position:absolute;
+	top:14px;
+	right:10px;
 }
 
-.ycbase_header_layout .c_right .c_button {
+.ycbase_header_layout  .c_user .c_button {
 	background-position: -200px 0px;
 	width: 70px;
 	float: left;
@@ -84,7 +88,7 @@ a, a:hover {
 	line-height: 20px;
 }
 
-.ycbase_header_layout .c_right .c_button a {
+.ycbase_header_layout  .c_user  .c_button a {
 	color: #4c2b2a;
 }
 

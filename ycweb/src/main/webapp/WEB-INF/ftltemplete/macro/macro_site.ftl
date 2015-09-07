@@ -32,17 +32,20 @@
 				</ul>
 			</div>
 			<div class="c_right">
-				<div class="ycbase_h_14"></div>
-				<div class="c_user" id="yc_id_top_nav_user">
-					<div class="c_button ycbase_img_ycico"> <@m_web_html_href "member_login"  "登录"/></div>
-					<div class="c_button ycbase_img_ycico"><@m_web_html_href "member_reg"  "注册"/></div>
-				</div>
-				<div class="w_h_20 w_clear"></div>
+				
+				<div class="w_h_10 w_clear"></div>
+				<div class="w_h_50 w_clear"></div>
 				<div class="c_search ycbase_img_ycico">
 					<input id="ycbase_header_layout_search" class="c_input" type="text"  placeholder="站内搜索"/>
 					<span class="c_target" onclick="yclib.page_search()">&nbsp;</span>
 				</div>
 			</div>
+
+			<div class="c_user" id="yc_id_top_nav_user">
+					<div class="c_button ycbase_img_ycico"> <@m_web_html_href "member_login"  "登录"/></div>
+					<div class="c_button ycbase_img_ycico"><@m_web_html_href "member_reg"  "注册"/></div>
+			</div>
+
 		</div>
 	</div>
 	

@@ -19,19 +19,10 @@
 		</div>
 		<div class="c_form">
 			<form class="form-horizontal">
-	  			<div class="form-group">
-	    			<label for="loginName" class="col-sm-3 control-label">用户名：</label>
-		    		<div class="col-sm-9">
-		      			<input type="email" class="form-control" name="loginName"  id="loginName" placeholder="请输入用户名"/>
-		    		</div>
-	  			</div>
-				
-	  			<div class="form-group">
-	    			<label for="loginPassword" class="col-sm-3 control-label">密   码：</label>
-		    		<div class="col-sm-9">
-		      			<input type="password" class="form-control" name="loginPassword"  id="loginPassword" placeholder="请输入密码"/>
-		    		</div>
-	  			</div>
+	  			
+				<@m_site_form_input p_id="loginName" p_text="邮箱/手机号" p_type="email"  />
+				<@m_site_form_input p_id="loginPassword" p_text="密 码" p_type="password"  />
+	  			
 				
 				<div class="form-group">
 	    			<label class="col-sm-3 control-label"></label>
@@ -40,12 +31,9 @@
 		      			<@m_web_html_href "" "忘记密码？" />
 		    		</div>
 	  			</div>
-				<div class="form-group">
-	    			<label class="col-sm-3 control-label"></label>
-		    		<div class="col-sm-9">
-		      			<button type="button" onclick="yccall.member_login(this)" class="btn btn-default btn-lg btn-block">登录</button>
-		    		</div>
-	  			</div>
+				<@m_site_form_button p_text="登录" p_click="yccall.member_login(this)"/>
+
+				
 			</form>
 		</div>
 	</div>
