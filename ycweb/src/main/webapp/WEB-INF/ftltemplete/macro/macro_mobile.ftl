@@ -2,10 +2,10 @@
 
 
 
-<#assign a_macro_site_resources_thems_js=["lib/jquery/jquery-last.min.js","lib/jquery/jquery-site.min.js","lib/bootstrap-3.3.5/js/bootstrap.min.js","zapjs/zapapi.js","zapjs/zapfunc.js","yclib/js/yccall.js","yclib/js/yclib.js"] >
+<#assign a_macro_site_resources_thems_js=["lib/jquery/jquery-last.min.js","lib/less/less-last.js","lib/jquery/jquery-site.min.js","lib/bootstrap-3.3.5/js/bootstrap.min.js","zapjs/zapapi.js","zapjs/zapfunc.js","yclib/js/yccall.js","yclib/js/yclib.js"] >
 
 
-<#assign a_macro_site_resources_thems_css=["lib/bootstrap-3.3.5/css/bootstrap.min.css","zapweb/css/w.css","yclib/css/ycbase.css"] >
+<#assign a_macro_site_resources_thems_css=["lib/bootstrap-3.3.5/css/bootstrap.min.css","zapweb/css/w.css"] >
 
 
 
@@ -14,42 +14,28 @@
 <#macro m_site_header p_title="" >
 	
 	<@m_web_html_begin p_title=p_title  p_js=a_macro_site_resources_thems_js p_css=a_macro_site_resources_thems_css  />
-	<link rel="shortcut icon" href="http://img.jkcdn.yxl9.cn//sfiles/ico/favicon.ico" />
 	<meta name="keywords" content="正道拍卖,拍卖,正道,珠宝,玉石,机构" />
 	<meta name="description" content="${p_title}-正道拍卖 - 中国珠宝玉石专业拍卖机构" />
+	<meta
+		content="width=640, maximum-scale=1.0, user-scalable=0"
+		name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	
+	
+	<#--dev时使用less开发  -->
+	<link rel="stylesheet/less" type="text/css" href="${a_macro_web_resources_link}resources/ycmobile/css/ycmb.less${a_macro_web_resources_version}" />
+	
+	
 	<@m_web_body_begin />
 	
-	<div class="ycbase_header_layout">
-		<div class="c_box">
-			<div class="c_logo ycbase_img_ycico w_pointer" onclick="location.href='index'"></div>
-			<div class="c_nav">
-				<div class="c_nav_h"></div>
-				<ul class="w_ul">
-					<li><@m_web_html_href "index"  "首&nbsp;&nbsp;&nbsp;页"/> </li>
-					<li><@m_web_html_href "news_list"  "正道资讯"/>  </li>
-					<li><@m_web_html_href "notice_list"  "正道公告"/>  </li>
-					<li><@m_web_html_href "auction_list"  "预展及成交"/>  </li>
-					<li class="c_nav_last"><@m_web_html_href "people_list"  "名家论道"/>  </li>
-					
-				</ul>
-			</div>
-			<div class="c_right">
-				
-				<div class="w_h_10 w_clear"></div>
-				<div class="w_h_50 w_clear"></div>
-				<div class="c_search ycbase_img_ycico">
-					<input id="ycbase_header_layout_search" class="c_input" type="text"  placeholder="站内搜索"/>
-					<span class="c_target" onclick="yclib.page_search()">&nbsp;</span>
-				</div>
-			</div>
-
-			<div class="c_user" id="yc_id_top_nav_user">
-					<div class="c_button ycbase_img_ycico"> <@m_web_html_href "member_login"  "登录"/></div>
-					<div class="c_button ycbase_img_ycico"><@m_web_html_href "member_reg"  "注册"/></div>
-			</div>
-
-		</div>
-	</div>
+	
+	
+	
+	
+	
 	
 </#macro>
 
@@ -58,36 +44,8 @@
 
 
 <#macro m_site_footer p_initjs="">
-	<div class="ycbase_footer_layout">
-		<div class="c_box">
-			<div class="ycbase_h_30"></div>
-			<div class="c_left">
-				<div class="c_nav">
-					<ul class="w_ul">
-						<li><@m_web_html_href "static_info?u_code=4653000100010001" "正道简介"/>	</li>
-						<li><@m_web_html_href "static_info?u_code=4653000100010002" "竞买流程"/></li>
-						<li><@m_web_html_href "static_info?u_code=4653000100010003" "竞买须知"/></li>
-						<li><@m_web_html_href "static_info?u_code=4653000100010004" "委托须知"/></li>
-						<li><@m_web_html_href "static_info?u_code=4653000100010005" "拍卖规则"/></li>
-						<li><@m_web_html_href "static_info?u_code=4653000100010006" "联系方式"/></li>
-						<li class="c_nav_last"><@m_web_html_href "static_info?u_code=4653000100010007" "友情链接"/></li>
-						
-					</ul>
-				</div>
-				<div class="w_h_10 w_clear"></div>
-				<div class="c_info">
-					   贵宾专线：86-10-65760069\65769969          传真：86-10-65760969         邮箱：pm@boguanpaimai.com
-				</div>
-				<div class="w_h_10"></div>
-				<div class="c_info">
-					   北京市朝阳区三间房东路1号（懋隆文化产业创意园）10栋    京ICP备14007245号-1
-				</div>
-			</div>
-			
-			<div class="c_right">
-				<div class="c_qrcode ycbase_img_ycico"></div>
-			</div>
-		</div>
+	<div class="ycmb_footer_layout">
+		
 	</div>
 	
 	<@m_web_body_end   />

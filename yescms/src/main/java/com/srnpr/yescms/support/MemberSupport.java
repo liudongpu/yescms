@@ -84,7 +84,7 @@ public class MemberSupport extends BaseClass {
 
 		if (result.upFlagTrue()
 				&& !StringUtils.equals(mMemberMap.get("flag_enable"), "1")) {
-			result.inErrorMessage(934105106);
+			result.inErrorMessage(965305005);
 		}
 		int lFaield = 0;
 		if (result.upFlagTrue()) {
