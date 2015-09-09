@@ -434,7 +434,7 @@ zapjs.zw = {
 
 		zapjs.f.setdomain();
 
-		var slib = "lib/ckeditor/";
+		var slib = "lib/ckeditor453/";
 		if (zapjs.f.browser('ie6') == true) {
 			slib = "lib/hack/ckeditor3/";
 		}

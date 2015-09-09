@@ -47,7 +47,7 @@
 	    			<label class="col-sm-3 control-label"></label>
 		    		<div class="col-sm-9">
 		    			<div class="w_h_20"></div>
-		      			<input type="checkbox" checked="checked"> <span class="c_small">愿意接收博观拍卖手机报和<@m_web_html_href p_link="static_info?u_code=4653000100020001" p_text="《注册用户协议》" p_target="_blank" /></span>
+		      			<input type="checkbox" checked="checked"> <span class="c_small"><@m_web_html_href p_link="static_info?u_code=4653000100020001" p_text="《注册用户协议》" p_target="_blank" /></span>
 		    		</div>
 	  			</div>
 				<div class="form-group">

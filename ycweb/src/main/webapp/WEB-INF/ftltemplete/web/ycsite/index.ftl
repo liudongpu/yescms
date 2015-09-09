@@ -24,7 +24,7 @@
   	<#list a_list as el>
 		<div class="item <#if el_index==0> active </#if>">
       		
-      		<@m_web_html_img p_img=el["file_url"]    p_width=1100/> 
+      		<@m_web_html_img p_img=el["file_url"]    p_width=1100  p_link=el["link_url"] /> 
       		<div class="carousel-caption">
         		&nbsp;
       		</div>

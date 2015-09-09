@@ -76,11 +76,11 @@
 				</div>
 				<div class="w_h_10 w_clear"></div>
 				<div class="c_info">
-					   贵宾专线：86-10-65760069\65769969          传真：86-10-65760969         邮箱：pm@boguanpaimai.com
+					   电话：86-10-64608966/64638966 传真：86-10-64638966 邮箱：zhengdaopaimai@163.com
 				</div>
 				<div class="w_h_10"></div>
 				<div class="c_info">
-					   北京市朝阳区三间房东路1号（懋隆文化产业创意园）10栋    京ICP备14007245号-1
+					   地址：北京市朝阳区亮马桥路32号 高斓大厦206、207室  邮编：100016
 				</div>
 			</div>
 			
@@ -89,7 +89,7 @@
 			</div>
 		</div>
 	</div>
-	
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256019766&;web_id=1256019766" language="JavaScript"></script>
 	<@m_web_body_end   />
 	
 	<#if p_initjs!="">

@@ -687,7 +687,10 @@ a, a:hover {
 	height: 80px;
 	background-color: #fcfcfc;
 }
-
+.ycsite_gl_top .c_plus
+{
+	padding:0px 30px;
+}
 .ycsite_sl_box .c_title a {
 	color: #5f5b58;
 	font-size: 20px;

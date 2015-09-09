@@ -23,9 +23,11 @@
 		<h1 class="yctop_h1">| ${a_info["name"]}</h1>
 	</div>
 	<div class="w_h_20"></div>
+	<div class="c_plus">
 	<div class="c_img">
 		
 		<@m_web_html_img p_img=a_auction["file_url"]  p_width=1100 p_link="specital_list?u_id="+a_auction["uid"]/> 
+	</div>
 	</div>
 	<div class="w_h_20"></div>
 </div>
