@@ -1,12 +1,12 @@
 
  <#include "../../macro/macro_site.ftl" />
-<@m_site_header p_title="名家论道"/>
+<@m_site_header p_title="正道指数"/>
 <@m_site_body_begin />
-<@m_site_body_nav p_text=["名家论道","列表"]  />
+<@m_site_body_nav p_text=["正道指数","列表"]  />
 
 <@m_web_init_dbcall />
 
-<#assign   a_list=a_macro_web_dbcall.queryAll("yc_people","","-zid","") />
+<#assign   a_list=a_macro_web_dbcall.queryAll("yc_people","yc_people.*,(select count(1) from yc_good where yc_good.people_uid=yc_people.uid) as v_count,(select ifnull(sum(success_price),0) from yc_good where yc_good.people_uid=yc_people.uid) as v_success ","-v_success","") />
 
 
 <div class="ycsite_pel_box" >
@@ -19,11 +19,13 @@
 					<@m_web_html_img p_img=el["file_url"]  p_link="people_good?u_id="+el["uid"]  p_width=246/> 
 				</div>
 				</#if>
-				<div class="c_name">
-					
-					<@m_web_html_href "people_good?u_id="+el["uid"] el["name"]/>	
+				<div class="c_act">
+					成交数量：${el["v_count"]}</br>
+					成交总额：<@m_web_format_money p_money=el["v_success"] />
 				</div>
 				<div class="w_h_30"></div>
+				<div class="w_opacity_90 c_pos"></div>
+				<div class="c_pzin"><@m_web_html_href "people_good?u_id="+el["uid"] el["name"]/></div>
 			</div>
 		</div>
 	</#list>

@@ -9,7 +9,7 @@
 
 <@m_site_header p_title=a_info["name"]/>
 <@m_site_body_begin />
-<@m_site_body_nav p_text=["名家论道","拍卖行情"] p_link=["people_list"]  />
+<@m_site_body_nav p_text=["正道指数","拍卖行情"] p_link=["people_list"]  />
 
 <@m_web_init_dbcall />
 

@@ -722,6 +722,7 @@ a, a:hover {
 	width: 228px;
 	overflow: hidden;
 	height: 228px;
+	  border-radius: 15px;
 }
 
 .ycsite_gl_show .c_image img {
@@ -752,6 +753,7 @@ a, a:hover {
 .ycsite_gl_top .c_img {
 	max-height: 300px;
 	overflow: hidden;
+	  border-radius: 25px;
 }
 
 .ycsite_gl_top .c_img img {
@@ -891,6 +893,12 @@ a, a:hover {
 	float: left;
 	width: 275px;
 	padding: 14px;
+	
+}
+
+.ycsite_pel_box .c_item .c_box
+{
+	position:relative;
 }
 
 .ycsite_pel_box .c_image {
@@ -903,15 +911,50 @@ a, a:hover {
 	width: 100%;
 }
 
-.ycsite_pel_box .c_name {
+.ycsite_pel_box .c_act {
 	border-bottom: solid 1px #ececec;
-}
-
-.ycsite_pel_box .c_name a {
 	color: #5f4e44;
 	font-size: 16px;
 	line-height: 40px;
 }
+
+
+
+.ycsite_pel_box .c_item .c_pos
+{
+	background-color:#000;
+	position:absolute;
+	top:165px;
+	width:245px;
+	height:40px;
+	color:#fff;
+	text-align:center;
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+	
+}
+
+.ycsite_pel_box .c_item .c_pzin
+{position:absolute;
+	top:165px;
+	width:245px;
+	height:40px;
+	color:#fff;
+	text-align:center;
+}
+
+
+
+.ycsite_pel_box .c_item .c_pzin a {
+	
+	color: #fff;
+	font-size: 16px;
+	line-height: 40px;
+
+	}
+
 
 .ycsite_pg_info {
 	
