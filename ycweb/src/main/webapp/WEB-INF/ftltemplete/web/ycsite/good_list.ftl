@@ -25,7 +25,7 @@
 	<div class="w_h_20"></div>
 	<div class="c_img">
 		
-		<@m_web_html_img p_img=a_auction["file_url"] p_width=1100 p_link="specital_list?u_id="+a_auction["uid"]/> 
+		<@m_web_html_img p_img=a_auction["file_url"]  p_width=1100 p_link="specital_list?u_id="+a_auction["uid"]/> 
 	</div>
 	<div class="w_h_20"></div>
 </div>
@@ -60,7 +60,7 @@
 				<div class="c_box">
 					<#if el["file_url"]!="">
 					<div class="c_image">
-						<@m_web_html_img p_img=el["file_url"] p_width=232 p_link="good_info?u_id="+el["uid"]/> 
+						<@m_web_html_img p_img=el["file_url"]?split('|')[0] p_width=232 p_link="good_info?u_id="+el["uid"]/> 
 					</div>
 					</#if>
 					

@@ -798,6 +798,22 @@ a, a:hover {
 	margin-right: 10px;
 }
 
+
+.ycsite_gi_box .c_nav .c_select .c_select_box
+{
+	  float: left;
+  width: 684px;
+  overflow: hidden;
+  position:relative;
+}
+.c_select_fix
+{
+	width:11400px;
+	position:absolute;
+	
+}
+
+
 .ycsite_gi_box .c_nav .c_select_to {
 	width: 30px;
 	background-color: #cac6bc;
@@ -809,6 +825,7 @@ a, a:hover {
 
 .ycsite_gi_box .c_nav .c_select_to a {
 	color: #fff;
+	text-decoration:none;
 }
 
 .ycsite_gi_box .c_nav .c_select_active {
@@ -830,6 +847,13 @@ a, a:hover {
 .ycsite_gi_box .c_nav  .c_select_right {
 	float: right;
 }
+
+
+.ycsite_gi_box .carousel-control
+{
+	background-image:none;
+}
+
 
 .ycsite_gi_box .c_img {
 	width: 1040px;

@@ -14,8 +14,8 @@
 
 <#assign   a_next=a_macro_web_dbcall.query("yc_good","","-zid",a_where+" and zid<=:zid" ,0,7,"zid",a_info["zid"])  />
 
-
-
+<#assign   a_image=a_info["file_url"]?split('|')  />
+<#assign   a_img_size=a_image?size  />
 <#assign   a_l_size=a_last?size  />
 <#assign   a_n_size=a_next?size  />
 
@@ -30,7 +30,45 @@
 		
 			<div class="c_img">
 			
-				<@m_web_html_img p_img=a_info["file_url"] p_width=1040 /> 
+				
+				
+				
+				
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				 
+				
+				
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner" role="listbox">
+				  
+				  	<#list a_image as el>
+						<div class="item <#if el_index==0> active </#if>">
+				      		
+				      		<@m_web_html_img p_img=el   p_width=1100/> 
+				      		<div class="carousel-caption">
+				        		&nbsp;
+				      		</div>
+				    	</div>
+					</#list>
+				  
+				    
+				    
+				  </div>
+				<#if (a_img_size>1)>
+					  <!-- Controls -->
+					  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+					    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+					    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
+				  </#if>
+				</div>
+				
+				
+				
 			</div>
 			<div class="w_h_10"></div>
 			<div class="c_nav">
@@ -44,27 +82,28 @@
 				<div class="c_select">
 					
 
-					<#if (a_l_size>0)>
-						<div class="c_select_to c_select_active "><@m_web_html_href a_url+a_last[a_l_size-1]["uid"] "&lt;"/></div>
-					<#else>
-						<div class="c_select_to">&lt;</div>
-					</#if>
+					
+						<div id="ycsite_gi_box_select_last" class="c_select_to "><@m_web_html_href "javascript:yclib.page_good_change('l',"+a_img_size+")" "&lt;"/></div>
 					
 					
 					
-					<#list a_next as el>
-						<#if (el_index<6)>
-							<div class="c_select_item">
-								<div class="c_select_image" >
-									<@m_web_html_img p_img=el["file_url"] p_width=103 p_link=a_url+el["uid"] /> 
-								</div>
+						<div class="c_select_box">
+							<div id="ycsite_gi_box_select_box"  class="c_select_fix">
+							<#list a_image as el>
+								
+									<div class="c_select_item">
+										<div class="c_select_image" >
+											<@m_web_html_img p_img=el p_width=103 p_link="javascript:$('#carousel-example-generic').carousel("+el_index+")" /> 
+										</div>
+									</div>
+								
+							</#list>
 							</div>
-						</#if>
-					</#list>
+						</div>
 					
 
-					<#if (a_n_size>6)>
-						<div class="c_select_to c_select_right c_select_active"><@m_web_html_href a_url+a_next[a_n_size-1]["uid"] "&gt;"/></div>
+					<#if (a_img_size>6)>
+						<div id="ycsite_gi_box_select_next" class="c_select_to c_select_right c_select_active"><@m_web_html_href "javascript:yclib.page_good_change('n',"+a_img_size+")" "&gt;"/></div>
 					<#else>
 						<div class="c_select_to  c_select_right">&gt;</div>
 					</#if>
