@@ -31,7 +31,19 @@
 				</div>
 				<div class="c_footer">
 					<div class="c_share ycbase_img_ycico">
+					
+					<span class="c_sh_text" onmouseover="jathis_setfunc('${el["title"]}','news_info?u_id=${el["uid"]}')">
+						<a href="http://www.jiathis.com/share?uid=1771750" class="jiathis jiathis_txt jiathis_separator " target="_blank">分享</a>
+					</span>
+					<span class="c_sh_commont">
+						<@m_web_html_href p_link="news_info?u_id="+el["uid"]+"#yccomment_box_sendtarget" p_text="评论" p_target="_blank"/>	
+					</span>
+					<span class="c_sh_time">
 						${el["create_time"]}
+					</span>
+					
+					
+						
 					</div>
 				</div>
 
@@ -42,4 +54,5 @@
 </div>
 
 <@m_site_body_end />
+<@m_site_share_js />
 <@m_site_footer p_initjs="yclib.page_news_list_init()"/>

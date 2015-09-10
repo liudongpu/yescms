@@ -14,7 +14,7 @@
 <#macro m_site_header p_title="" >
 	
 	<@m_web_html_begin p_title=p_title  p_js=a_macro_site_resources_thems_js p_css=a_macro_site_resources_thems_css  />
-	<link rel="shortcut icon" href="http://img.jkcdn.yxl9.cn//sfiles/ico/favicon.ico" />
+	<link rel="shortcut icon" href="http://img.jkcdn.yxl9.cn/sfiles/yczdpm/favicon.ico" />
 	<meta name="keywords" content="正道拍卖,拍卖,正道,珠宝,玉石,机构" />
 	<meta name="description" content="${p_title}-正道拍卖 - 中国珠宝玉石专业拍卖机构" />
 	<@m_web_body_begin />
@@ -85,11 +85,15 @@
 			</div>
 			
 			<div class="c_right">
-				<div class="c_qrcode ycbase_img_ycico"></div>
+				<div class="c_qrcode">
+					<a href="http://img.jkcdn.yxl9.cn/sfiles/yczdpm/ycwx.jpg" target="_blank"><img src="http://img.jkcdn.yxl9.cn/sfiles/yczdpm/ycwx.jpg" alt="微信扫一扫"/></a>
+				</div>
 			</div>
 		</div>
 	</div>
+	<div class="w_display">
 	<script src="http://s11.cnzz.com/z_stat.php?id=1256019766&;web_id=1256019766" language="JavaScript"></script>
+	</div>
 	<@m_web_body_end   />
 	
 	<#if p_initjs!="">
@@ -238,7 +242,7 @@
 			暂无评论
 		</div>
 		
-		<div class="yccomment_box_label">
+		<div class="yccomment_box_label"  id="yccomment_box_sendtarget">
 			发表
 		</div>
 		<div  class="yccomment_box_add w_display">
@@ -256,7 +260,7 @@
 		</div>
 		<div  class="yccomment_box_login w_display">
 			<div class="yccomment_box_login_text">
-				游客您好，登录 后可以发表评论，如果您还没有帐号可以现在 <@m_web_html_href "member_reg" "注册"/>	。
+				游客您好， <@m_web_html_href p_link="member_login" p_text="登录" p_target="_blank"/> 后可以发表评论，如果您还没有帐号可以现在 <@m_web_html_href p_link="member_reg" p_text="注册"  p_target="_blank"/>	。
 			</div>
 			<div class="yccomment_box_login_footer">
 				<input class="yccomment_box_login_btn" type="button" value="发表" />
@@ -297,13 +301,28 @@ var jiathis_config={
 	hideMore:false
 }
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+<@m_site_share_js />
 <!-- JiaThis Button END -->
 
 
 </#macro>
 
 
+<#macro m_site_share_js>
+
+<script type="text/javascript">
+
+function jathis_setfunc(title,url)
+{
+	jiathis_config.title = title;
+	jiathis_config.url = zen.site.upurl(url);
+}
+
+var jiathis_config = {siteNum:6,
+	sm:"tsina,tqq,weixin,qzone,copy,email"};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1362787344359325" charset="utf-8"></script>
+</#macro>
 
 <#macro m_site_pagenav  p_page_info>
 

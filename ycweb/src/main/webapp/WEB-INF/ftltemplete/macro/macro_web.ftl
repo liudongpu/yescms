@@ -141,7 +141,7 @@
 
 <#if p_link!=""><a href="${p_link}"></#if>
 
-<#if (p_width>-1)><#local p_img=p_img?replace(".jpg","-"+(p_width)+"-1000.jpg")?replace(".com/",".com/qsize/")?replace(".cn/",".cn/qsize/") /></#if>
+<#if ((p_width>-1)&&(p_img?index_of(".jpg")!=-1))><#local p_img=p_img?replace(".jpg","-"+(p_width)+"-1000.jpg")?replace(".com/",".com/qsize/")?replace(".cn/",".cn/qsize/") /></#if>
 <img src="${p_img}" alt="${p_alt}" /><#if p_link!=""></a></#if></#macro>
 
 

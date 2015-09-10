@@ -60,12 +60,13 @@
 			<div class="c_item">
 		</#if>
 				<div class="c_box">
-					<#if el["file_url"]!="">
 					<div class="c_image">
-						<@m_web_html_img p_img=el["file_url"]?split('|')[0] p_width=232 p_link="good_info?u_id="+el["uid"]/> 
-					</div>
-					</#if>
+					<#if el["file_url"]!="">
 					
+						<@m_web_html_img p_img=el["file_url"]?split('|')[0] p_width=232 p_link="good_info?u_id="+el["uid"]/> 
+					
+					</#if>
+					</div>
 					<div class="c_title">
 							
 						<@m_web_html_href "good_info?u_id="+el["uid"] el["name"]/>	

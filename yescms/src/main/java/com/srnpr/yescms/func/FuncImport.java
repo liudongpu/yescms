@@ -31,7 +31,9 @@ public class FuncImport extends RootFunc {
 			mWebResult = new FuncAdd().funcDo(sOperateUid, mDataMap);
 
 		}
-
+		if (mWebResult.upFlagTrue() && mAddMaps.get("flag_clear").equals("1")) {
+			DbUp.upTable("yc_good").delete("special_uid", mAddMaps.get("special_uid"));
+		}
 		List<String> listError = new ArrayList<String>();
 
 		if (mWebResult.upFlagTrue()) {
@@ -54,7 +56,6 @@ public class FuncImport extends RootFunc {
 							MDataMap mInsertMap = new MDataMap();
 
 							mInsertMap.put("code", StringUtils.defaultIfBlank(mExcelMap.get("图录号"), ""));
-							
 
 							mInsertMap.put("name", StringUtils.defaultIfBlank(mExcelMap.get("名称"), ""));
 							mInsertMap.put("special_uid", mAddMaps.get("special_uid"));

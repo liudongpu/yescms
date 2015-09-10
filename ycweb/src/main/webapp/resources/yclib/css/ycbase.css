@@ -167,9 +167,12 @@ a, a:hover {
 }
 
 .ycbase_footer_layout .c_qrcode {
-	background-position: -500px 0px;
 	width: 100px;
 	height: 80px;
+}
+
+.ycbase_footer_layout .c_qrcode img {
+	width: 85px;
 }
 
 .ycbase_body_show_layout {
@@ -408,18 +411,18 @@ a, a:hover {
 .yctop_pagenav ul li a {
 	padding: 10px 16px;
 	border: solid 1px #dbd9d8;
-	color:#473f3a;
+	color: #473f3a;
 	text-decoration: none;
 }
-.yctop_pagenav ul li.c_disabled a
-{
-	background-color:#f8f8f8;
-}
-.yctop_pagenav ul li.c_active a,.yctop_pagenav ul li.c_item a:hover {
-	background-color: #c5a686;
-	color:#fff;
+
+.yctop_pagenav ul li.c_disabled a {
+	background-color: #f8f8f8;
 }
 
+.yctop_pagenav ul li.c_active a, .yctop_pagenav ul li.c_item a:hover {
+	background-color: #c5a686;
+	color: #fff;
+}
 
 .yctop_pagenav_box {
 	margin: auto;
@@ -489,8 +492,32 @@ a, a:hover {
 	height: 20px;
 	width: 100%;
 	line-height: 20px;
-	text-indent: 175px;
 }
+.ycsite_nl_box .c_share a
+{
+	color:#a8a4a1;
+	font-size:12px;
+}
+
+.ycsite_nl_box .c_share span
+{
+	display:inline-block;
+}
+
+.ycsite_nl_box .c_share .c_sh_text {
+	
+	padding-left:35px;
+}
+
+.ycsite_nl_box .c_share .c_sh_commont {
+	
+	padding-left:30px;
+}
+.ycsite_nl_box .c_share .c_sh_time {
+	
+	padding-left:55px;
+}
+
 
 .ycsite_ni_box {
 	overflow: hidden;
@@ -583,8 +610,7 @@ a, a:hover {
 }
 
 .ycsite_al_box .c_image {
-	height: 180px;
-	overflow: hidden;
+	
 }
 
 .ycsite_al_box .c_image img {
@@ -661,7 +687,7 @@ a, a:hover {
 }
 
 .ycsite_sl_box .c_aucimg {
-	max-height: 200px;
+	
 	overflow: hidden;
 }
 
@@ -687,10 +713,11 @@ a, a:hover {
 	height: 80px;
 	background-color: #fcfcfc;
 }
-.ycsite_gl_top .c_plus
-{
-	padding:0px 30px;
+
+.ycsite_gl_top .c_plus {
+	padding: 0px 30px;
 }
+
 .ycsite_sl_box .c_title a {
 	color: #5f5b58;
 	font-size: 20px;
@@ -725,7 +752,7 @@ a, a:hover {
 	width: 228px;
 	overflow: hidden;
 	height: 228px;
-	  border-radius: 15px;
+	border-radius: 15px;
 }
 
 .ycsite_gl_show .c_image img {
@@ -754,9 +781,9 @@ a, a:hover {
 }
 
 .ycsite_gl_top .c_img {
-	max-height: 300px;
+	
 	overflow: hidden;
-	  border-radius: 25px;
+	border-radius: 25px;
 }
 
 .ycsite_gl_top .c_img img {
@@ -801,21 +828,17 @@ a, a:hover {
 	margin-right: 10px;
 }
 
-
-.ycsite_gi_box .c_nav .c_select .c_select_box
-{
-	  float: left;
-  width: 684px;
-  overflow: hidden;
-  position:relative;
-}
-.c_select_fix
-{
-	width:11400px;
-	position:absolute;
-	
+.ycsite_gi_box .c_nav .c_select .c_select_box {
+	float: left;
+	width: 684px;
+	overflow: hidden;
+	position: relative;
 }
 
+.c_select_fix {
+	width: 11400px;
+	position: absolute;
+}
 
 .ycsite_gi_box .c_nav .c_select_to {
 	width: 30px;
@@ -828,7 +851,7 @@ a, a:hover {
 
 .ycsite_gi_box .c_nav .c_select_to a {
 	color: #fff;
-	text-decoration:none;
+	text-decoration: none;
 }
 
 .ycsite_gi_box .c_nav .c_select_active {
@@ -851,12 +874,9 @@ a, a:hover {
 	float: right;
 }
 
-
-.ycsite_gi_box .carousel-control
-{
-	background-image:none;
+.ycsite_gi_box .carousel-control {
+	background-image: none;
 }
-
 
 .ycsite_gi_box .c_img {
 	width: 1040px;
@@ -920,12 +940,10 @@ a, a:hover {
 	float: left;
 	width: 275px;
 	padding: 14px;
-	
 }
 
-.ycsite_pel_box .c_item .c_box
-{
-	position:relative;
+.ycsite_pel_box .c_item .c_box {
+	position: relative;
 }
 
 .ycsite_pel_box .c_image {
@@ -945,43 +963,34 @@ a, a:hover {
 	line-height: 40px;
 }
 
-
-
-.ycsite_pel_box .c_item .c_pos
-{
-	background-color:#000;
-	position:absolute;
-	top:165px;
-	width:245px;
-	height:40px;
-	color:#fff;
-	text-align:center;
-	filter: alpha(opacity=50);
+.ycsite_pel_box .c_item .c_pos {
+	background-color: #000;
+	position: absolute;
+	top: 165px;
+	width: 245px;
+	height: 40px;
+	color: #fff;
+	text-align: center;
+	filter: alpha(opacity = 50);
 	-moz-opacity: 0.5;
 	-khtml-opacity: 0.5;
 	opacity: 0.5;
-	
 }
 
-.ycsite_pel_box .c_item .c_pzin
-{position:absolute;
-	top:165px;
-	width:245px;
-	height:40px;
-	color:#fff;
-	text-align:center;
+.ycsite_pel_box .c_item .c_pzin {
+	position: absolute;
+	top: 165px;
+	width: 245px;
+	height: 40px;
+	color: #fff;
+	text-align: center;
 }
-
-
 
 .ycsite_pel_box .c_item .c_pzin a {
-	
 	color: #fff;
 	font-size: 16px;
 	line-height: 40px;
-
-	}
-
+}
 
 .ycsite_pg_info {
 	
