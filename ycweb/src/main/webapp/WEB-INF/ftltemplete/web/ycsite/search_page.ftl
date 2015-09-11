@@ -72,7 +72,7 @@
 						${el["name"]}
 					</td>
 					<td>
-						<@m_web_html_img p_img=el["file_url"]  p_width=55/> 
+						<@m_web_html_img p_img=el["file_url"]?split('|')[0]  p_width=55/> 
 					</td>
 					<td>
 						查看详情	
