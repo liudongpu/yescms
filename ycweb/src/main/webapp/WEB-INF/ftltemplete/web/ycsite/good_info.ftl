@@ -128,7 +128,7 @@
 		</div>
 		<div class="c_box c_bb ">
 			<div class="c_c_left">
-				图录号：${a_info["code"]} <br/>质地：${a_info["texture"]}<br/> 尺寸：${a_info["size"]}  <br/>参考价：${a_info["assess_price"]}
+				图录号：${a_info["code"]} <br/>质地：${a_info["texture"]}<br/> 尺寸：${a_info["size"]}  <br/>参考价：${a_info["assess_price"]} <br/>成交价：<span class="yctop_price"><@m_web_format_money p_money=a_info["success_price"]/></span>
 			</div>
 			<div class="c_c_right">
 				<div class="c_auction"><@m_web_html_href "specital_list?u_id="+a_auction["uid"] "拍卖会："+a_auction["name"]/>	</div>
