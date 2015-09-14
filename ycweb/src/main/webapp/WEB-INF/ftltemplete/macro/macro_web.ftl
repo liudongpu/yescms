@@ -132,6 +132,7 @@
 <#macro m_web_event_href p_link="" > location.href='${p_link}' </#macro>
 
 
+<#macro m_web_event_click p_link="" p_js=""> onclick="<#if p_link!="">location.href='${p_link}'<#else>${p_js}</#if>" </#macro>
 
 <#-- 基础元素  -->
 
@@ -160,4 +161,13 @@
 <#macro m_web_html_text p_id="" p_value="">
 	<input type="text" name="${p_id}" id="${p_id}" value="${p_value}"/>
 </#macro>
+
+
+<#-- div按钮  -->
+<#macro m_web_html_divbtn p_id="" p_class="" p_link="" p_click="">
+	<div class="${p_class}" onclick="<#if p_link!='' >location.href='${p_link}'<#else>${p_click}</#if>" ></div>
+</#macro>
+
+
+
 

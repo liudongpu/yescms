@@ -2,7 +2,7 @@
 
 
 
-<#assign a_macro_site_resources_thems_js=["lib/jquery/jquery-last.min.js","lib/less/less-last.js","lib/jquery/jquery-site.min.js","lib/bootstrap-3.3.5/js/bootstrap.min.js","zapjs/zapapi.js","zapjs/zapfunc.js","yclib/js/yccall.js","yclib/js/yclib.js"] >
+<#assign a_macro_site_resources_thems_js=["lib/jquery/jquery-last.min.js","lib/jquery/jquery-site.min.js","lib/bootstrap-3.3.5/js/bootstrap.min.js","zapjs/zapapi.js","zapjs/zapfunc.js","yclib/js/yccall.js","ycmobile/js/ycmobile.js"] >
 
 
 <#assign a_macro_site_resources_thems_css=["lib/bootstrap-3.3.5/css/bootstrap.min.css","zapweb/css/w.css"] >
@@ -11,7 +11,7 @@
 
 
 
-<#macro m_site_header p_title="" >
+<#macro m_site_header p_title="" p_header="" p_lib="">
 	
 	<@m_web_html_begin p_title=p_title  p_js=a_macro_site_resources_thems_js p_css=a_macro_site_resources_thems_css  />
 	<meta name="keywords" content="正道拍卖,拍卖,正道,珠宝,玉石,机构" />
@@ -27,12 +27,54 @@
 	
 	<#--dev时使用less开发  -->
 	<link rel="stylesheet/less" type="text/css" href="${a_macro_web_resources_link}resources/ycmobile/css/ycmb.less${a_macro_web_resources_version}" />
+	<@m_web_html_js ["lib/less/less-last.js"] />
+
 	
+	<#if p_lib="swiper">
+		<@m_web_html_js ["lib/swiper/swiper3.06.jquery.min.js"] />
+		<@m_web_html_css ["lib/swiper/swiper3.06.min.css"] />
+	</#if>
 	
 	<@m_web_body_begin />
 	
 	
-	
+	<div class="ym_layout_header">
+
+		<div class="c_box">
+			<div class="c_full">
+			
+				<#if p_header=="index">
+				<div class="c_logo" <@m_web_event_click p_link="index" /> ></div>
+				<#else>
+				<div class="c_back" <@m_web_event_click p_js="history.go(-1)" /> ></div>
+				</#if>
+
+
+				<#if p_header=="">
+					<div class="c_title">${p_title}</div>
+				</#if>
+
+				<div class="c_btn c_option" <@m_web_event_click p_js="ycmobile.header_nav_click(this)" />  ></div>
+				
+				
+				
+				<#if p_header=="index">
+				<div class="c_btn c_user" <@m_web_event_click p_js="ycmobile.header_nav_click(this)" />  ></div>
+				<div class="c_btn c_search" <@m_web_event_click p_js="ycmobile.header_nav_click(this)" />  ></div>
+				</#if>
+			</div>
+			<div class="c_menu" id="ym_id_mm_menu">
+				<div class="w_h_20"></div>
+				<div class="c_item"><div class="c_ico c_i0"></div><div class="c_text">分享  </div></div>
+				<div class="c_item"><div class="c_ico c_i1"></div><div class="c_text">回到首页  </div></div>
+				<div class="c_item"><div class="c_ico c_i2"></div><div class="c_text">联系电话  </div></div>
+				<div class="c_item"><div class="c_ico c_i3"></div><div class="c_text">在线送拍  </div></div>
+				<div class="c_item"><div class="c_ico c_i4"></div><div class="c_text">客户服务 </div></div>
+			</div>
+		</div>
+		
+		
+	</div>
 	
 	
 	

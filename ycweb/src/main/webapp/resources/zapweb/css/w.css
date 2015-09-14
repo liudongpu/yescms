@@ -162,3 +162,15 @@ body,html
 {
 	font-size:14px;
 }
+
+
+
+.w_pos_abs
+{
+	position:absolute;
+	
+}
+.w_pos_rel
+{
+	position:relative;
+}
