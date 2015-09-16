@@ -4,6 +4,14 @@
 <#assign a_macro_common_resources_version="?v="+a_macro_common_system_version >
 <#-- 资源文件路径 -->
 <#assign a_macro_common_resources_link="../" >
+
+
+<#if (b_method.upConfig("zapcom.model")=="idc")>
+	<#assign a_macro_web_resources_link="http://zdpm.aliyinxl.srnpr.com/" >
+	<#assign a_macro_web_img_link="http://zdpm.aliyinxl.srnpr.com/" >
+</#if>
+
+
 <#-- 项目特殊样式 -->
 <#assign a_macro_common_resources_thems_js=["fileconcat/js-autoconcat.js"] >
 <#assign a_macro_common_resources_thems_css=["fileconcat/css-autoconcat.css"] >
