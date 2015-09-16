@@ -11,7 +11,7 @@
 
 
 
-<#macro m_site_header p_title="" p_header="" p_lib="">
+<#macro m_site_header p_title="" p_header="" p_lib=""  p_back="">
 	
 	<@m_web_html_begin p_title=p_title  p_js=a_macro_site_resources_thems_js p_css=a_macro_site_resources_thems_css  />
 	<meta name="keywords" content="正道拍卖,拍卖,正道,珠宝,玉石,机构" />
@@ -37,7 +37,7 @@
 	
 	<@m_web_body_begin />
 	
-	
+	<#if p_header!="member">
 	<div class="ym_layout_header">
 
 		<div class="c_box">
@@ -46,7 +46,12 @@
 				<#if p_header=="index">
 				<div class="c_logo" <@m_web_event_click p_link="index" /> ></div>
 				<#else>
-				<div class="c_back" <@m_web_event_click p_js="history.go(-1)" /> ></div>
+					<#if p_back=="">
+						<div class="c_back" <@m_web_event_click p_js="history.go(-1)" /> ></div>
+					<#else>
+						<div class="c_back" <@m_web_event_click p_link=p_back /> ></div>
+					</#if>
+				
 				</#if>
 
 
@@ -54,19 +59,31 @@
 					<div class="c_title">${p_title}</div>
 				</#if>
 
-				<div class="c_btn c_option" <@m_web_event_click p_js="ycmobile.header_nav_click(this)" />  ></div>
-				
+				<#if p_header=="search">
+					<div class="c_search">
+						<div class="input-group  input-group-lg">
+					      <span class="input-group-btn">
+					        <button class="btn btn-default" type="button" onclick="ycmobile.page_search(this)">
+					        	<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					        </button>
+					      </span>
+					      <input type="text" id="ycbase_header_layout_search" class="form-control" placeholder="请输入搜索关键字" value="${p_title}"/>
+					    </div>
+				    </div>
+				<#else>
+					<div class="c_btn c_option" <@m_web_event_click p_js="ycmobile.header_nav_click(this)" />  ></div>
+				</#if>
 				
 				
 				<#if p_header=="index">
-				<div class="c_btn c_user" <@m_web_event_click p_js="ycmobile.header_nav_click(this)" />  ></div>
-				<div class="c_btn c_search" <@m_web_event_click p_js="ycmobile.header_nav_click(this)" />  ></div>
+				<div class="c_btn c_user" <@m_web_event_click p_js="ycmobile.header_user_click(this)" />  ></div>
+				<div class="c_btn c_search" <@m_web_event_click p_link="search_page" />  ></div>
 				</#if>
 			</div>
 			<div class="c_menu" id="ym_id_mm_menu">
 				<div class="w_h_20"></div>
 				<div class="c_item"><div class="c_ico c_i0"></div><div class="c_text">分享  </div></div>
-				<div class="c_item"><div class="c_ico c_i1"></div><div class="c_text">回到首页  </div></div>
+				<div class="c_item"  <@m_web_event_click p_link="index" /> ><div class="c_ico c_i1"></div><div class="c_text">回到首页  </div></div>
 				<div class="c_item"><div class="c_ico c_i2"></div><div class="c_text">联系电话  </div></div>
 				<div class="c_item"><div class="c_ico c_i3"></div><div class="c_text">在线送拍  </div></div>
 				<div class="c_item"><div class="c_ico c_i4"></div><div class="c_text">客户服务 </div></div>
@@ -75,7 +92,7 @@
 		
 		
 	</div>
-	
+	</#if>
 	
 	
 	
@@ -203,12 +220,11 @@
 
 <#macro m_site_form_input p_id="" p_text="" p_value="" p_type="text" p_attr="" >
 
-							<div class="form-group">
-				    			<label for="${p_id}" class="col-sm-3 control-label">${p_text}： </label>
-					    		<div class="col-sm-9">
-					      			<input type="${p_type}" class="form-control"  name="${p_id}" value="${p_value}"  id="${p_id}" placeholder="请输入${p_text}" ${p_attr}/>
-					    		</div>
-				  			</div>
+							
+				    			
+	<input type="${p_type}"   name="${p_id}" value="${p_value}"  id="${p_id}" placeholder="请输入${p_text}" ${p_attr}/>
+					    		
+				  		
 
 </#macro>
 
@@ -227,41 +243,46 @@
 
 <#macro m_site_comment_list p_uid="" p_title="" p_url=""  >
 
-<div class="ycsite_comment_info">
+<div class="ymwap_comment_info">
 	<div class="yccomment_box_info" id="yccomment_box_info_${p_uid}">
-		<div class="yccomment_box_label">
-			文章评论
-		</div>
-		<div  class="yccomment_box_list">
-		</div>
-		<div  class="yccomment_box_none w_display ">
-			暂无评论
-		</div>
-		
-		<div class="yccomment_box_label">
-			发表
-		</div>
-		<div  class="yccomment_box_add w_display">
-			<form>
-				<div class="yccomment_box_add_text">
-					<@m_web_html_hidden p_id="infoUid" p_value=p_uid />
-					<@m_web_html_hidden p_id="infoTitle" p_value=p_title />
-					<@m_web_html_hidden p_id="infoUrl" p_value=p_url />
-					<textarea id="note" name="note"></textarea>
-				</div>
-				<div class="yccomment_box_add_footer">
-					<input class="yccomment_box_login_btn" type="button" value="发表" onclick="yccall.comment_submit(this)" />
-				</div>
-			</form>
-		</div>
-		<div  class="yccomment_box_login w_display">
-			<div class="yccomment_box_login_text">
-				游客您好，登录 后可以发表评论，如果您还没有帐号可以现在 <@m_web_html_href "member_reg" "注册"/>	。
+		<div class="w_h_20"></div>
+		<div class="yccomment_box_deb">
+			<div class="yccomment_box_label">
+				<span class="yccomment_box_tip"></span>&nbsp;&nbsp;文章评论
 			</div>
-			<div class="yccomment_box_login_footer">
-				<input class="yccomment_box_login_btn" type="button" value="发表" />
+			<div  class="yccomment_box_list">
+			</div>
+			<div  class="yccomment_box_none w_display ">
+				暂无评论
 			</div>
 		</div>
+		<div class="w_h_20"></div>
+		<div class="yccomment_box_deb">
+			<div class="yccomment_box_label">
+				<span class="yccomment_box_tip"></span>&nbsp;&nbsp;发表
+			</div>
+			<div  class="yccomment_box_add w_display">
+				<form>
+					<div class="yccomment_box_add_text">
+						<@m_web_html_hidden p_id="infoUid" p_value=p_uid />
+						<@m_web_html_hidden p_id="infoTitle" p_value=p_title />
+						<@m_web_html_hidden p_id="infoUrl" p_value=p_url />
+						<textarea id="note" name="note"></textarea>
+					</div>
+					<div class="w_h_40"></div>
+					<div class="yccomment_box_add_footer" <@m_web_event_click p_js="yccall.comment_submit(this)" /> >
+						发表
+					</div>
+				</form>
+			</div>
+			<div  class="yccomment_box_login w_display">
+				<div class="yccomment_box_login_text">
+					游客您好，<@m_web_html_href "member_login" "登录"/>后可以发表评论，如果您还没有帐号可以现在 <@m_web_html_href "member_reg" "注册"/>	。
+				</div>
+				
+			</div>
+		</div>
+		<div class="w_h_20"></div>
 	</div>
 
 </div>

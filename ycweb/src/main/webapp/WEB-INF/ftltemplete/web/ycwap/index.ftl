@@ -43,7 +43,7 @@
 			<div class="c_ico c_i0"></div>
 			<div class="c_label">预展/成交</div>
 		</div>
-		<div class="c_item">
+		<div class="c_item" <@m_web_event_click p_link="news_list" /> >
 			<div class="c_ico c_i1"></div>
 			<div class="c_label">正道资讯</div>
 		</div>

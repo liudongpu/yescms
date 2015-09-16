@@ -12,7 +12,14 @@ var yccall = {
 
 		zapfunc.f.cookie("member_name", oData.memberName);
 		zapfunc.f.cookie("access_token", oData.accessToken);
-		zapfunc.f.to_url('user_set');
+		
+		var sLink=$('#loginFrom').val();
+		if(!sLink)
+			{
+			sLink="user_set";
+			}
+		
+		zapfunc.f.to_url(sLink);
 
 	},
 
