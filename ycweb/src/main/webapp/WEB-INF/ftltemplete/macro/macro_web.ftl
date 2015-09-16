@@ -8,6 +8,10 @@
 <#-- 图片文件路径 -->
 <#assign a_macro_web_img_link="../../" >
 
+<#if (b_method.upConfig("zapcom.model")=="idc")>
+	<#assign a_macro_web_resources_link="http://zdpm.aliyinxl.srnpr.com/" >
+	<#assign a_macro_web_img_link="http://zdpm.aliyinxl.srnpr.com/" >
+</#if>
 
 <#-- 标准页面后缀路径 .html -->
 <#assign a_macro_web_html_attr="" >
