@@ -7,8 +7,8 @@
 
 
 <#if (b_method.upConfig("zapcom.model")=="idc")>
-	<#assign a_macro_web_resources_link="http://zdpm.aliyinxl.srnpr.com/" >
-	<#assign a_macro_web_img_link="http://zdpm.aliyinxl.srnpr.com/" >
+	<#assign a_macro_common_resources_link="http://zdpm.aliyinxl.srnpr.com/" >
+	
 </#if>
 
 
