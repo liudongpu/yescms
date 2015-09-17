@@ -23,6 +23,16 @@ var yccall = {
 
 	},
 
+	verify_code:function()
+	{
+		
+		var sUqCode=$('#verifyUqcode').val();
+		
+		$('#ycverify_verify_image').attr('src','../../extend/image?u_uqcode='+sUqCode+'&u_r='+Math.random());
+		
+		
+	},
+	
 	up_access_token : function() {
 		return zapfunc.f.cookie("access_token");
 	},

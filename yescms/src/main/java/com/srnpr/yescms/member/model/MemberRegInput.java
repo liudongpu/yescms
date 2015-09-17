@@ -15,6 +15,10 @@ public class MemberRegInput extends RootInput {
 	private String memberPassword = "";
 	@ZapcomApi(value = "重复密码", require = 1)
 	private String memberRepass = "";
+	@ZapcomApi(value = "验证码唯一编号")
+	private String verifyUqcode = "";
+	@ZapcomApi(value = "用户验证码")
+	private String memberVerify = "";
 
 	public String getMemberEmail() {
 		return memberEmail;
@@ -46,6 +50,22 @@ public class MemberRegInput extends RootInput {
 
 	public void setMemberRepass(String memberRepass) {
 		this.memberRepass = memberRepass;
+	}
+
+	public String getVerifyUqcode() {
+		return verifyUqcode;
+	}
+
+	public void setVerifyUqcode(String verifyUqcode) {
+		this.verifyUqcode = verifyUqcode;
+	}
+
+	public String getMemberVerify() {
+		return memberVerify;
+	}
+
+	public void setMemberVerify(String memberVerify) {
+		this.memberVerify = memberVerify;
 	}
 
 }

@@ -19,30 +19,25 @@
 		</div>
 		<div class="c_form">
 			<form class="form-horizontal">
+	  			
+	  			
+	  			<@m_site_form_input p_id="memberEmail" p_text="邮箱" p_type="email"  />
+	  			<@m_site_form_input p_id="memberPhone" p_text="手机号码" />
+				<@m_site_form_input p_id="memberPassword" p_text="密码" p_type="password"  />
+				<@m_site_form_input p_id="memberRepass" p_text="重复密码" p_type="password"  />
+				
+	  			
 	  			<div class="form-group">
-	    			<label for="memberEmail" class="col-sm-3 control-label">邮箱：</label>
-		    		<div class="col-sm-9">
-		      			<input type="email" class="form-control" name="memberEmail"  id="memberEmail" placeholder="请输入邮箱"/>
+	    			<label for="memberRepass" class="col-sm-3 control-label">验证码：</label>
+		    		<div class="col-sm-5">
+		    			<@m_web_html_hidden p_id="verifyUqcode" p_value=b_method.upClass("com.srnpr.zapweb.helper.WebHelper").upUuid()   />
+		      			<input type="text" class="form-control" name="memberVerify"  id="memberVerify" placeholder="请输入验证码"/>
+		    		</div>
+		    		<div class="col-sm-4">
+		    			<img id="ycverify_verify_image" src="" onclick="yccall.verify_code()" class="w_pointer"/>
 		    		</div>
 	  			</div>
-				<div class="form-group">
-	    			<label for="memberPhone" class="col-sm-3 control-label">手机号码：</label>
-		    		<div class="col-sm-9">
-		      			<input type="text" class="form-control" name="memberPhone" id="memberPhone" placeholder="请输入手机号码"/>
-		    		</div>
-	  			</div>
-	  			<div class="form-group">
-	    			<label for="memberPassword" class="col-sm-3 control-label">密   码：</label>
-		    		<div class="col-sm-9">
-		      			<input type="password" class="form-control" name="memberPassword"  id="memberPassword" placeholder="请输入密码"/>
-		    		</div>
-	  			</div>
-				<div class="form-group">
-	    			<label for="memberRepass" class="col-sm-3 control-label">重复密码：</label>
-		    		<div class="col-sm-9">
-		      			<input type="password" class="form-control" name="memberRepass"  id="memberRepass" placeholder="请再次输入密码"/>
-		    		</div>
-	  			</div>
+	  			
 				<div class="form-group">
 	    			<label class="col-sm-3 control-label"></label>
 		    		<div class="col-sm-9">
@@ -66,4 +61,4 @@
 </div>
 
 <@m_site_body_end />
-<@m_site_footer/>
+<@m_site_footer  p_initjs="yccall.verify_code()"/>

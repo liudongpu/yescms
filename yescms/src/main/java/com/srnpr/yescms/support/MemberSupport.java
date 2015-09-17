@@ -28,6 +28,22 @@ public class MemberSupport extends BaseClass {
 	public MemberResult memberReginster(MemberRegInput input) {
 		MemberResult result = new MemberResult();
 
+		
+		if(result.upFlagTrue()&&StringUtils.isNotBlank(input.getVerifyUqcode()))
+		{
+			String sCode=DbUp.upTable("mc_verify_code").one("uqcode",input.getVerifyUqcode()).get("verify_code");
+			
+			if(StringUtils.isBlank(input.getMemberVerify())||    !sCode.equals(input.getMemberVerify()))
+			{
+				
+				result.inErrorMessage(965305018);
+			}
+			
+			
+			
+		}
+		
+		
 		if (result.upFlagTrue()
 				&& DbUp.upTable("mc_member_info").count("member_email",
 						input.getMemberEmail().trim()) > 0) {
