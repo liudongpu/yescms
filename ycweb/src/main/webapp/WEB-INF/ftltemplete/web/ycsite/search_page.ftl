@@ -3,8 +3,15 @@
 <@m_web_init_dbcall />
 <@m_web_init_sessionhelper />
 <#assign   a_keyword=a_macro_web_sessionhelper.upRequest("u_keyword") />
-<#assign   a_list=a_macro_web_dbcall.queryAll("yc_good","","-zid"," `name` like :keyword or `code` like  :keyword ","keyword","%"+a_keyword+"%") />
-<#assign   a_people=a_macro_web_dbcall.queryAll("yc_people","","-zid"," `name` like :keyword  ","keyword","%"+a_keyword+"%") />
+
+<#assign   a_addwhere="" />
+<#if a_keyword=="">
+<#assign   a_addwhere=" 1=2 and " />
+
+</#if>
+
+<#assign   a_list=a_macro_web_dbcall.queryAll("yc_good","","-zid",a_addwhere+" `name` like :keyword or `code` like  :keyword ","keyword","%"+a_keyword+"%") />
+<#assign   a_people=a_macro_web_dbcall.queryAll("yc_people","","-zid",a_addwhere+" `name` like :keyword  ","keyword","%"+a_keyword+"%") />
 
 <@m_site_header p_title=a_keyword/>
 <@m_site_body_begin />

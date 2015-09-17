@@ -38,7 +38,7 @@
 				<div class="w_h_10 w_clear"></div>
 				<div class="w_h_50 w_clear"></div>
 				<div class="c_search ycbase_img_ycico">
-					<input id="ycbase_header_layout_search" class="c_input" type="text"  placeholder="站内搜索"/>
+					<input id="ycbase_header_layout_search" class="c_input" type="text"  placeholder="站内搜索" onkeypress="if(event.keyCode==13) {yclib.page_search();}"/>
 					<span class="c_target" onclick="yclib.page_search()">&nbsp;</span>
 				</div>
 			</div>
@@ -65,9 +65,9 @@
 				<div class="c_nav">
 					<ul class="w_ul">
 						<li><@m_web_html_href "static_info?u_code=4653000100010001" "正道简介"/>	</li>
-						<li><@m_web_html_href "static_info?u_code=4653000100010002" "竞买流程"/></li>
-						<li><@m_web_html_href "static_info?u_code=4653000100010003" "竞买须知"/></li>
-						<li><@m_web_html_href "static_info?u_code=4653000100010004" "委托须知"/></li>
+						<li><@m_web_html_href "static_info?u_code=4653000100010002" "法律法规"/></li>
+						<li><@m_web_html_href "static_info?u_code=4653000100010003" "竞买指南"/></li>
+						<li><@m_web_html_href "static_info?u_code=4653000100010004" "委托指南"/></li>
 						<li><@m_web_html_href "static_info?u_code=4653000100010005" "拍卖规则"/></li>
 						<li><@m_web_html_href "static_info?u_code=4653000100010006" "联系方式"/></li>
 						<li class="c_nav_last"><@m_web_html_href "static_info?u_code=4653000100010007" "友情链接"/></li>

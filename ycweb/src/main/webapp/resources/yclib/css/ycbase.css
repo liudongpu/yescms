@@ -799,7 +799,7 @@ a, a:hover {
 }
 
 .ycsite_gi_box .c_nav div {
-	height: 90px;
+	height: 120px;
 	float: left;
 }
 
@@ -866,7 +866,7 @@ a, a:hover {
 .ycsite_gi_box .c_nav .c_select_image {
 	overflow: hidden;
 	width: 103px;
-	height: 76px;
+	height: 103px;
 	border: solid 1px #c8c6c5;
 }
 
