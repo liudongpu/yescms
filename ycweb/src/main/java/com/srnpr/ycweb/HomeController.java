@@ -37,16 +37,8 @@ public class HomeController extends RootControl {
 
 		try {
 			String sText = new ImageSupport().getCertPic(130, 40, 4, response.getOutputStream());
-
-			// 禁止图像缓存。
-			response.setHeader("Pragma", "no-cache");
-			response.setHeader("Cache-Control", "no-cache");
-			response.setDateHeader("Expires", 0);
-
-			response.setContentType("image/jpeg");
-
-			WebSessionHelper.create().inSession("extendimage", sText);
-
+			
+			
 			String sUqCode = request.getParameter("u_uqcode");
 
 			if (DbUp.upTable("mc_verify_code").count("uqcode", sUqCode) == 0) {
@@ -56,6 +48,18 @@ public class HomeController extends RootControl {
 				DbUp.upTable("mc_verify_code").dataUpdate(new MDataMap("uqcode", sUqCode, "verify_code", sText),
 						"verify_code", "uqcode");
 			}
+			
+
+			// 禁止图像缓存。
+			response.setHeader("Pragma", "no-cache");
+			response.setHeader("Cache-Control", "no-cache");
+			response.setDateHeader("Expires", 0);
+
+			response.setContentType("image/jpeg");
+
+			
+
+			
 
 			response.getOutputStream().flush();
 
