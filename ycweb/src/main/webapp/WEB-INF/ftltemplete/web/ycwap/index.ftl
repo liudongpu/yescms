@@ -47,7 +47,7 @@
 			<div class="c_ico c_i1"></div>
 			<div class="c_label">正道资讯</div>
 		</div>
-		<div class="c_item">
+		<div class="c_item"  <@m_web_event_click p_js="ycmobile.check_login_href('user_send')" /> >
 			<div class="c_ico c_i2"></div>
 			<div class="c_label">在线送拍</div>
 		</div>

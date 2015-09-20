@@ -35,6 +35,12 @@
 		<@m_web_html_css ["lib/swiper/swiper3.06.min.css"] />
 	</#if>
 	
+	<#if p_lib="upload">
+		<@m_web_html_js ["zapjs/zapjs.js","zapweb/js/zapweb_upload.js"] />
+		
+	</#if>
+	
+	
 	<@m_web_body_begin />
 	
 	<#if p_header!="member">
@@ -76,7 +82,7 @@
 				
 				
 				<#if p_header=="index">
-				<div class="c_btn c_user" <@m_web_event_click p_js="ycmobile.header_user_click(this)" />  ></div>
+				<div class="c_btn c_user" <@m_web_event_click p_js="ycmobile.check_login_href('user_center')" />  ></div>
 				<div class="c_btn c_search" <@m_web_event_click p_link="search_page" />  ></div>
 				</#if>
 			</div>
@@ -227,6 +233,33 @@
 				  		
 
 </#macro>
+
+
+
+<#macro m_site_form_add p_id="" p_text="" p_value="" p_type="text" p_attr="" >
+
+							<div class="ym_b_form_item">
+								
+				    			<label for="${p_id}" class="ym_b_form_label">${p_text} </label>
+					    		
+					      			<input type="${p_type}" class="ym_b_form_input"  name="${p_id}" value="${p_value}"  id="${p_id}" placeholder="请输入${p_text}" ${p_attr}/>
+					    		
+					    		
+				  			</div>
+
+</#macro>
+<#macro m_site_form_upload p_id=""   p_text="">
+		<div class="ym_b_form_item">
+		<label for="${p_id}" class="ym_b_form_label">${p_text} </label>
+							<input type="hidden" zapweb_attr_target_url="../../upload/" zapweb_attr_set_params="" id="${p_id}" name="${p_id}" value="">
+		<span class="control-upload_iframe"><iframe src="../../upload/upload?zw_s_source=${p_id}" class="zw_page_upload_iframe" frameborder="0"></iframe></span>
+		<span class="control-upload_process"></span>
+		<span class="control-upload"></span>
+		
+		</div>
+
+</#macro>
+
 
 <#macro m_site_form_button p_text="" p_click="">
 							<div class="form-group">

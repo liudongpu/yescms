@@ -5,12 +5,14 @@ import java.util.Map;
 
 import org.junit.Test;
 
+import com.srnpr.zapcom.basehelper.EncodeHelper;
 import com.srnpr.zapcom.basehelper.TestHelper;
 import com.srnpr.zapcom.basemodel.MDataMap;
 import com.srnpr.zapweb.webmethod.WebUpload;
 import com.srnpr.zapweb.webmodel.MWebField;
 import com.srnpr.zapweb.webmodel.MWebResult;
 import com.srnpr.zapweb.websupport.ExcelSupport;
+import com.srnpr.zapweb.websupport.ImageMagicSupport;
 import com.srnpr.zapweb.websupport.ZipSupport;
 
 /**
@@ -19,7 +21,29 @@ import com.srnpr.zapweb.websupport.ZipSupport;
 public class AppTest extends TestHelper
 
 {
-	@Test
+
+	public void testBase() {
+		bLogTest(EncodeHelper.urlEncode(
+				"http://image.sycdn.ichsy.com/cfiles/staticfiles/upload/24d86/68ed0bcbde134f29ab2d0ce90fb650c9.jpg||"));
+
+	}
+
+	public void testImage() {
+
+		try {
+
+			ImageMagicSupport imageMagicSupport = new ImageMagicSupport();
+			bLogTest(imageMagicSupport.zoomImage(
+					"http://image.sycdn.ichsy.com/cfiles/staticfiles/upload/24d86/68ed0bcbde134f29ab2d0ce90fb650c9.jpg",
+					640, 90).getFileUrl());
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+
+	}
+
 	public void testZip() {
 
 		try {
@@ -27,15 +51,15 @@ public class AppTest extends TestHelper
 					"http://img.jkcdn.yxl9.cn/sfiles/upload/24d7e/4f3bd298a98849ed983d41891eeed91d.zip");
 
 			for (String sKey : map.keySet()) {
-				
-				/*
-				MWebResult mResult = WebUpload.create()
-						.remoteUpload("xx", "xx.jpg", map.get(sKey));
 
-				bLogTest(mResult.getResultObject().toString());
-				
-				*/
-				
+				/*
+				 * MWebResult mResult = WebUpload.create() .remoteUpload("xx",
+				 * "xx.jpg", map.get(sKey));
+				 * 
+				 * bLogTest(mResult.getResultObject().toString());
+				 * 
+				 */
+
 				bLogTest(sKey);
 			}
 

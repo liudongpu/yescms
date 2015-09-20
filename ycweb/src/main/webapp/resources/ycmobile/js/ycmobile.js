@@ -50,14 +50,17 @@ var ycmobile = {
 		}
 	},
 
-	header_user_click : function() {
+	
+
+	check_login_href : function(sUrl) {
+
 		if (yccall.up_access_token()) {
-			zapfunc.f.to_url('user_center');
+			zapfunc.f.to_url(sUrl);
 		} else {
 			zapfunc.f.to_url('member_login');
 		}
-
 	},
+
 	page_search : function() {
 		var sKeyWord = $('#ycbase_header_layout_search').val();
 		zapfunc.f.to_url('search_page?u_keyword=' + sKeyWord);
