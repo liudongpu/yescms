@@ -5,7 +5,7 @@
 <@m_web_init_dbcall />
 <@m_web_init_sessionhelper />
 <#assign   a_info=a_macro_web_dbcall.upOne("yc_special","uid",a_macro_web_sessionhelper.upRequest("u_id")) />
-<#assign   a_list=a_macro_web_dbcall.queryAll("yc_good","","-zid","","special_uid",a_info["uid"]) />
+<#assign   a_list=a_macro_web_dbcall.queryAll("yc_good","","code","","special_uid",a_info["uid"]) />
 <#assign   a_auction=a_macro_web_dbcall.upOne("yc_auction","uid",a_info["auction_uid"]) />
 
 <@m_site_header p_title=a_info["name"]/>
@@ -26,7 +26,7 @@
 	<div class="c_plus">
 	<div class="c_img">
 		
-		<@m_web_html_img p_img=a_auction["file_url"]  p_width=1100 p_link="specital_list?u_id="+a_auction["uid"]/> 
+		<@m_web_html_img p_img=a_auction["file_url"]  p_link="specital_list?u_id="+a_auction["uid"]/> 
 	</div>
 	</div>
 	<div class="w_h_20"></div>

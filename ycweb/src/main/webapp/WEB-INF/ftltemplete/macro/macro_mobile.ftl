@@ -242,12 +242,28 @@
 								
 				    			<label for="${p_id}" class="ym_b_form_label">${p_text} </label>
 					    		
-					      			<input type="${p_type}" class="ym_b_form_input"  name="${p_id}" value="${p_value}"  id="${p_id}" placeholder="请输入${p_text}" ${p_attr}/>
+					      		<input type="${p_type}" class="ym_b_form_input"  name="${p_id}" value="${p_value}"  id="${p_id}" placeholder="请输入${p_text}" ${p_attr}/>
 					    		
 					    		
 				  			</div>
 
 </#macro>
+
+<#macro m_site_form_ico p_id="" p_text="" p_value="" p_type="text" p_attr=""  p_css="" >
+
+							<div class="ym_b_form_item">
+
+				    			<span class="ym_b_form_ico ${p_css}"></span>
+					    		
+					      		<input type="${p_type}" class="ym_b_form_input"  name="${p_id}" value="${p_value}"  id="${p_id}" placeholder="请输入${p_text}" ${p_attr}/>
+					    		
+					    		
+				  			</div>
+
+</#macro>
+
+
+
 <#macro m_site_form_upload p_id=""   p_text="">
 		<div class="ym_b_form_item">
 		<label for="${p_id}" class="ym_b_form_label">${p_text} </label>
@@ -261,12 +277,9 @@
 </#macro>
 
 
-<#macro m_site_form_button p_text="" p_click="">
-							<div class="form-group">
-				    			<label class="col-sm-3 control-label"></label>
-					    		<div class="col-sm-9">
-					      			<button type="button" onclick="${p_click}" class="btn btn-default btn-lg btn-block">${p_text}</button>
-					    		</div>
+<#macro m_site_form_button p_text="" p_link="" p_js="" >
+							<div class="w_p_20">
+				    			<div class="ym_b_button" <@m_web_event_click p_js=p_js  p_link=p_link/> >${p_text}</div>
 				  			</div>
 </#macro>
 

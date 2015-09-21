@@ -44,7 +44,7 @@
 				  	<#list a_image as el>
 						<div class="item <#if el_index==0> active </#if>">
 				      		
-				      		<@m_web_html_img p_img=el   p_width=1100/> 
+				      		<@m_web_html_img p_img=el   /> 
 				      		<div class="carousel-caption">
 				        		&nbsp;
 				      		</div>

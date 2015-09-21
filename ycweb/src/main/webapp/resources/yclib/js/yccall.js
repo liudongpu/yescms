@@ -133,6 +133,17 @@ var yccall = {
 							
 							zapapi.m.popover(oEl, '发表成功');
 						});
+	},
+	
+	sendadd_submit : function(oEl) {
+		zapapi
+				.api_form(oEl, "com_srnpr_yescms_bu_api_UserSendAdd",
+						function(oData) {
+							
+							zapapi.m.popover(oEl, '提交成功');
+							
+							zapfunc.f.to_url("user_send");
+						});
 	}
 
 };

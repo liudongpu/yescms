@@ -112,7 +112,7 @@
 
 <#-- 初始化数据操作脚本  -->
 <#macro m_web_init_dbcall>
-<#assign a_macro_web_dbcall=b_method.upClass("com.srnpr.zapweb.websupport.DataCallSupport") >
+<#assign a_macro_web_dbcall=b_method.upClass("com.srnpr.zapweb.websupport.DataCallSupport") />
 </#macro>
 
 <#-- 初始化request脚本  -->
@@ -144,10 +144,14 @@
 <#-- 图像元素  -->
 <#macro m_web_html_img p_link="" p_alt="" p_width=-1 p_img="" >
 
+<#if p_img!="" >
 <#if p_link!=""><a href="${p_link}"></#if>
 
 <#if ((p_width>-1)&&(p_img?index_of(".jpg")!=-1))><#local p_img=p_img?replace(".jpg","-"+(p_width)+"-1000.jpg")?replace(".com/",".com/qsize/")?replace(".cn/",".cn/qsize/") /></#if>
-<img src="${p_img}" alt="${p_alt}" /><#if p_link!=""></a></#if></#macro>
+<img src="${p_img}" alt="${p_alt}" /><#if p_link!=""></a></#if>
+
+</#if>
+</#macro>
 
 
 <#-- 超链接  -->

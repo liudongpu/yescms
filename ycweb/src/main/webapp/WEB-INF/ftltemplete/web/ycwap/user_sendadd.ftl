@@ -7,12 +7,12 @@
 <@m_site_header p_title="在线送拍" p_lib="upload"  p_header=""/>
 
 <div class="ym_usse_add ym_b_form_box">
-	
+	<form class="form-horizontal">
 	
 		<div class="c_title">填写委托人信息</div>
-		<@m_site_form_add p_id="user_name" p_text="姓名" />
-		<@m_site_form_add p_id="user_phone" p_text="电话" />
-		<@m_site_form_add p_id="user_email" p_text="邮箱" />
+		<@m_site_form_add p_id="user_name" p_text="姓名"  p_value=a_info["real_name"] />
+		<@m_site_form_add p_id="user_phone" p_text="电话" p_value=a_info["member_phone"] />
+		<@m_site_form_add p_id="user_email" p_text="邮箱"  p_value=a_info["member_email"] />
 		<div class="c_title">填写拍品信息</div>
 		<@m_site_form_add p_id="good_name" p_text="名称" />
 		<@m_site_form_add p_id="good_author" p_text="作者" />
@@ -22,7 +22,9 @@
 		<@m_site_form_upload p_id="photo_one"  p_text="拍品照片1"/>
 		<@m_site_form_upload p_id="photo_two"  p_text="拍品照片2" />
 		<@m_site_form_upload p_id="photo_three"  p_text="拍品照片3" />
-	
+		<div class="w_h_40"></div>
+		<@m_site_form_button p_text="提交" p_js="yccall.sendadd_submit(this)" />
+	</form>
 </div>
 
 
