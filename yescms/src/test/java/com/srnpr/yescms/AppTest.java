@@ -22,27 +22,7 @@ public class AppTest extends TestHelper
 
 {
 
-	public void testBase() {
-		bLogTest(EncodeHelper.urlEncode(
-				"http://image.sycdn.ichsy.com/cfiles/staticfiles/upload/24d86/68ed0bcbde134f29ab2d0ce90fb650c9.jpg||"));
-
-	}
-
-	public void testImage() {
-
-		try {
-
-			ImageMagicSupport imageMagicSupport = new ImageMagicSupport();
-			bLogTest(imageMagicSupport.zoomImage(
-					"http://image.sycdn.ichsy.com/cfiles/staticfiles/upload/24d86/68ed0bcbde134f29ab2d0ce90fb650c9.jpg",
-					640, 90).getFileUrl());
-
-		} catch (Exception e) {
-
-			e.printStackTrace();
-		}
-
-	}
+	
 
 	public void testZip() {
 
