@@ -6,7 +6,7 @@
 
 <@m_web_init_dbcall />
 
-<#assign   a_list=a_macro_web_dbcall.queryAll("yc_people","yc_people.*,(select count(1) from yc_good where yc_good.people_uid=yc_people.uid) as v_count,(select ifnull(sum(success_price),0) from yc_good where yc_good.people_uid=yc_people.uid) as v_success ","-v_success","") />
+<#assign   a_list=a_macro_web_dbcall.queryAll("yc_people","yc_people.*,(select count(1) from yc_good where yc_good.people_uid=yc_people.uid and yc_good.success_price>0) as v_count,(select ifnull(sum(success_price),0) from yc_good where yc_good.people_uid=yc_people.uid) as v_success ","-v_success,convert(`name` USING gbk) COLLATE gbk_chinese_ci","") />
 
 
 <div class="ycsite_pel_box" >

@@ -5,7 +5,7 @@
 <@m_web_init_dbcall />
 <@m_web_init_sessionhelper />
 <#assign   a_info=a_macro_web_dbcall.upOne("yc_special","uid",a_macro_web_sessionhelper.upRequest("u_id")) />
-<#assign   a_list=a_macro_web_dbcall.queryAll("yc_good","","code","","special_uid",a_info["uid"]) />
+<#assign   a_list=a_macro_web_dbcall.queryAll("yc_good","","lpad(code,10,'0')","","special_uid",a_info["uid"]) />
 <#assign   a_auction=a_macro_web_dbcall.upOne("yc_auction","uid",a_info["auction_uid"]) />
 
 <@m_site_header p_title=a_info["name"]/>
