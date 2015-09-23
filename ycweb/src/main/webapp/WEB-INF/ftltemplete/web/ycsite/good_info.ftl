@@ -10,9 +10,9 @@
 <#assign   a_where=" special_uid='"+a_info["special_uid"]+"' " />
 
 <#assign   a_url="good_info?u_id="  />
-<#assign   a_last=a_macro_web_dbcall.query("yc_good","","zid",a_where+" and zid>:zid" ,0,6,"zid",a_info["zid"])  />
+<#assign   a_last=a_macro_web_dbcall.query("yc_good","","-zid",a_where+" and zid<:zid" ,0,6,"zid",a_info["zid"])  />
 
-<#assign   a_next=a_macro_web_dbcall.query("yc_good","","-zid",a_where+" and zid<=:zid" ,0,7,"zid",a_info["zid"])  />
+<#assign   a_next=a_macro_web_dbcall.query("yc_good","","zid",a_where+" and zid>=:zid" ,0,7,"zid",a_info["zid"])  />
 
 <#assign   a_image=a_info["file_url"]?split('|')  />
 <#assign   a_img_size=a_image?size  />

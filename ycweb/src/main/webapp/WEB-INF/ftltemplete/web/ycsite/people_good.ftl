@@ -62,7 +62,7 @@
 				<div class="c_p_border">
 				
 					<div class="c_p_image">
-						<@m_web_html_img p_img=el["file_url"] p_link="good_info?u_type=people&u_id="+el["uid"] p_width=235/> 
+						<@m_web_html_img p_img=el["file_url"]?split('|')[0] p_link="good_info?u_type=people&u_id="+el["uid"] p_width=235/> 
 					</div>
 					<div class="w_h_15"></div>
 					<div class="c_title">

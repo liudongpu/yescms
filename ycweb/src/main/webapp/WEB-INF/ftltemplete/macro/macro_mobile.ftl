@@ -90,9 +90,9 @@
 				<div class="w_h_20"></div>
 				<div class="c_item"><div class="c_ico c_i0"></div><div class="c_text">分享  </div></div>
 				<div class="c_item"  <@m_web_event_click p_link="index" /> ><div class="c_ico c_i1"></div><div class="c_text">回到首页  </div></div>
-				<div class="c_item"><div class="c_ico c_i2"></div><div class="c_text">联系电话  </div></div>
-				<div class="c_item"><div class="c_ico c_i3"></div><div class="c_text">在线送拍  </div></div>
-				<div class="c_item"><div class="c_ico c_i4"></div><div class="c_text">客户服务 </div></div>
+				<div class="c_item"  <@m_web_event_click p_link="notice_list" /> ><div class="c_ico c_i2"></div><div class="c_text">正道公告  </div></div>
+				<div class="c_item"  <@m_web_event_click p_link="people_list" /> ><div class="c_ico c_i3"></div><div class="c_text">正道指数  </div></div>
+				<div class="c_item"  <@m_web_event_click p_link="index" /> ><div class="c_ico c_i4"></div><div class="c_text">客户服务 </div></div>
 			</div>
 		</div>
 		
@@ -251,12 +251,13 @@
 
 <#macro m_site_form_ico p_id="" p_text="" p_value="" p_type="text" p_attr=""  p_css="" >
 
-							<div class="ym_b_form_item">
+							<div class="ym_b_form_detail">
 
-				    			<span class="ym_b_form_ico ${p_css}"></span>
-					    		
-					      		<input type="${p_type}" class="ym_b_form_input"  name="${p_id}" value="${p_value}"  id="${p_id}" placeholder="请输入${p_text}" ${p_attr}/>
-					    		
+				    			<span class="ym_b_form_detail_ico ${p_css}"></span>
+					    		<span class="ym_b_form_detail_wsp"></span>
+					    		<span class="ym_b_form_detail_ibox">
+					      		<input type="${p_type}" class="ym_b_form_detail_input"  name="${p_id}" value="${p_value}"  id="${p_id}" placeholder="请输入${p_text}" ${p_attr}/>
+					    		</span>
 					    		
 				  			</div>
 

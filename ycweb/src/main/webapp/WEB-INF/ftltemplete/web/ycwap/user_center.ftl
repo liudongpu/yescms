@@ -20,33 +20,40 @@
 		</div>
 	</div>
 	<div class="w_clear w_h_20"></div>
-	<div class="c_item">
-		<div class="c_ico c_i0"></div>
-		<div class="c_text">账户设置</div>
-		<div class="c_to">&gt;</div>
-		<div class="w_clear"></div>
+	<div class="c_item" >
+		<div  <@m_web_event_click  p_link="user_set"/>>
+			<div class="c_ico c_i0"></div>
+			<div class="c_text">账户设置</div>
+			<div class="c_to">&gt;</div>
+			<div class="w_clear"></div>
+		</div>
 		<hr/>
-		<div class="c_ico c_i1"></div>
-		<div class="c_text">密码设置</div>
-		<div class="c_to">&gt;</div>
-		<div class="w_clear"></div>
+		<div  <@m_web_event_click  p_link="user_password"/>>
+			<div class="c_ico c_i1"></div>
+			<div class="c_text">密码设置</div>
+			<div class="c_to">&gt;</div>
+			<div class="w_clear"></div>
+		</div>
 	</div>
 
 	<div class="w_clear w_h_20"></div>
 	<div class="c_item">
-		<div class="c_ico c_i2"></div>
-		<div class="c_text">我的收藏</div>
-		<div class="c_to">&gt;</div>
-		<div class="w_clear"></div>
+		<div  <@m_web_event_click  p_link="user_collect"/>>
+			<div class="c_ico c_i2"></div>
+			<div class="c_text">我的收藏</div>
+			<div class="c_to">&gt;</div>
+			<div class="w_clear"></div>
+		</div>
 		
 	</div>
 	<div class="w_clear w_h_20"></div>
 	<div class="c_item">
-		<div class="c_ico c_i3"></div>
-		<div class="c_text">我的评论</div>
-		<div class="c_to">&gt;</div>
-		<div class="w_clear"></div>
-		
+		<div  <@m_web_event_click  p_link="user_comment"/>>
+			<div class="c_ico c_i3"></div>
+			<div class="c_text">我的评论</div>
+			<div class="c_to">&gt;</div>
+			<div class="w_clear"></div>
+		</div>
 	</div>
 
 	<div class="w_clear w_h_50">
