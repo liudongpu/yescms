@@ -88,11 +88,24 @@
 			</div>
 			<div class="c_menu" id="ym_id_mm_menu">
 				<div class="w_h_20"></div>
-				<div class="c_item"><div class="c_ico c_i0"></div><div class="c_text">分享  </div></div>
+				<div class="c_item" <@m_web_event_click p_js="ycmobile.share_baidu()" /> ><div class="c_ico c_i0"></div><div class="c_text">分享  </div></div>
+				<div class="ym_b_mobile_share_box" id="mobile_share_box">
+						<!-- JiaThis Button BEGIN -->
+						<div class="jiathis_style_32x32">
+							<a class="jiathis_button_qzone"></a> <a
+								class="jiathis_button_tsina"></a> <a
+								class="jiathis_button_weixin"></a> <a
+								class="jiathis_button_renren"></a> 
+						</div>
+						
+						<!-- JiaThis Button END -->
+						<div id="mobile_share_box_js"></div>
+						<div class="w_clear"></div>
+				</div>
 				<div class="c_item"  <@m_web_event_click p_link="index" /> ><div class="c_ico c_i1"></div><div class="c_text">回到首页  </div></div>
 				<div class="c_item"  <@m_web_event_click p_link="notice_list" /> ><div class="c_ico c_i2"></div><div class="c_text">正道公告  </div></div>
 				<div class="c_item"  <@m_web_event_click p_link="people_list" /> ><div class="c_ico c_i3"></div><div class="c_text">正道指数  </div></div>
-				<div class="c_item"  <@m_web_event_click p_link="index" /> ><div class="c_ico c_i4"></div><div class="c_text">客户服务 </div></div>
+				<div class="c_item"  <@m_web_event_click p_link="static_info?u_code=4653000100010001" /> ><div class="c_ico c_i4"></div><div class="c_text">客户服务 </div></div>
 			</div>
 		</div>
 		

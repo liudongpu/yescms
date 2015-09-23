@@ -51,9 +51,9 @@
 			<div class="c_ico c_i2"></div>
 			<div class="c_label">在线送拍</div>
 		</div>
-		<div class="c_item">
+		<div class="c_item"><a href="tel:01064608966">
 			<div class="c_ico c_i3"></div>
-			<div class="c_label">联系电话</div>
+			<div class="c_label">联系电话</div></a>
 		</div>
 	
 	

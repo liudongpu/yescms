@@ -1,5 +1,8 @@
 var ycmobile = {
 
+	temp : {
+		share_show : false
+	},
 	init_base : function() {
 
 		var sAccessToken = yccall.up_access_token();
@@ -50,8 +53,6 @@ var ycmobile = {
 		}
 	},
 
-	
-
 	check_login_href : function(sUrl) {
 
 		if (yccall.up_access_token()) {
@@ -75,6 +76,41 @@ var ycmobile = {
 				$('#ycsite_sp_box_tab_item_' + i).hide();
 			}
 		}
+
+	},
+
+	people_good_nav : function(iIndex) {
+
+		for (var i = 0; i < 2; i++) {
+			if (i == iIndex) {
+				$('#ym_pego_nav_id_menu_' + i).addClass('c_n_active');
+				$('#ym_pego_nav_id_info_' + i).show();
+			} else {
+				$('#ym_pego_nav_id_menu_' + i).removeClass('c_n_active');
+				$('#ym_pego_nav_id_info_' + i).hide();
+			}
+		}
+	},
+	share_baidu : function() {
+		if (ycmobile.temp.share_show) {
+			$('#mobile_share_box').hide();
+			ycmobile.temp.share_show = false;
+		} else {
+			$('#mobile_share_box').show();
+			ycmobile.temp.share_show = true;
+		}
+		/*
+		 * window._bd_share_config = { "common" : { "bdSnsKey" : {}, "bdText" :
+		 * "", "bdMini" : "2", "bdMiniList" : false, "bdPic" : "", "bdStyle" :
+		 * "0", "bdSize" : "32" }, "share" : {} }; with (document)
+		 * 0[(getElementsByTagName('head')[0] || body)
+		 * .appendChild(createElement('script')).src =
+		 * 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' +
+		 * ~(-new Date() / 36e5)];
+		 */
+		$('#mobile_share_box_js')
+				.html(
+						'<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1406793959846526" charset="utf-8"></script>');
 
 	}
 

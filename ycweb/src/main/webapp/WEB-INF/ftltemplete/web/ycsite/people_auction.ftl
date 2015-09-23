@@ -60,7 +60,7 @@
 			<#list a_list as el>
 				<tr onclick="<@m_web_event_href p_link="good_info?u_type=people&u_id="+el["uid"] />">
 					<td>
-						<@m_web_html_img p_img=el["file_url"]  p_width=55/> 
+						<@m_web_html_img p_img=el["file_url"]?split('|')[0]  p_width=55/> 
 					</td>
 					<td>
 						${el["name"]}
