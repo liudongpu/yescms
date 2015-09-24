@@ -4,6 +4,8 @@
 <@m_web_init_sessionhelper />
 <#assign   a_keyword=a_macro_web_sessionhelper.upRequest("u_keyword") />
 
+
+
 <#assign   a_addwhere="" />
 <#assign a_showtext="暂无搜索结果！" />
 <#if a_keyword=="">

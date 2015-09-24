@@ -63,7 +63,7 @@ var ycmobile = {
 	},
 
 	page_search : function() {
-		var sKeyWord = $('#ycbase_header_layout_search').val();
+		var sKeyWord = $('#u_keyword').val();
 		zapfunc.f.to_url('search_page?u_keyword=' + sKeyWord);
 	},
 	search_change : function(iIndex) {

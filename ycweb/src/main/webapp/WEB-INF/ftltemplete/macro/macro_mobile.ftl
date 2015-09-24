@@ -67,14 +67,19 @@
 
 				<#if p_header=="search">
 					<div class="c_search">
+						<form action="search_page">
 						<div class="input-group  input-group-lg">
-					      <span class="input-group-btn">
-					        <button class="btn btn-default" type="button" onclick="ycmobile.page_search(this)">
-					        	<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-					        </button>
-					      </span>
-					      <input type="text" id="ycbase_header_layout_search" class="form-control" placeholder="请输入搜索关键字" value="${p_title}"/>
+							
+						      <span class="input-group-btn">
+						        <button class="btn btn-default" type="button" onclick="ycmobile.page_search(this)">
+						        	<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						        </button>
+						      </span>
+						      
+						      <input type="search" id="u_keyword" name="u_keyword" class="form-control" placeholder="请输入搜索关键字" value="${p_title}"/>
+						    
 					    </div>
+					    </form>
 				    </div>
 				<#else>
 					<div class="c_btn c_option" <@m_web_event_click p_js="ycmobile.header_nav_click(this)" />  ></div>
