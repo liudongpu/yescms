@@ -4,7 +4,7 @@
 <@m_web_init_sessionhelper />
 <#assign   a_info=a_macro_web_dbcall.upOne("yc_people","uid",a_macro_web_sessionhelper.upRequest("u_id")) />
 <#assign   a_list=a_macro_web_dbcall.queryAll("yc_good","yc_good.*,(select time  from yc_special where yc_special.uid=yc_good.special_uid) as time","-zid","","people_uid",a_info["uid"]) />
-<#assign   a_count=a_macro_web_dbcall.upOneWhere("yc_good"," count(1) as v_sum,ifnull(sum(success_price),0) as v_money,ifnull(sum(success_price)/count(1),0) as v_sqrt,ifnull(max(success_price),0) as v_max ","","","people_uid",a_info["uid"]) />
+<#assign   a_count=a_macro_web_dbcall.upOneWhere("yc_good"," count(1) as v_sum,ifnull(sum(success_price),0) as v_money,ifnull(sum(success_price)/count(1),0) as v_sqrt,ifnull(max(success_price),0) as v_max ","","people_uid=:people_uid and success_price>0","people_uid",a_info["uid"]) />
 
 <@m_site_header p_title="个人主页" p_lib=""  p_header=""/>
 <div class="ym_pego_main" >

@@ -83,8 +83,12 @@ public class FuncImport extends RootFunc {
 								if (map != null && map.size() > 0) {
 									mInsertMap.put("people_uid", map.get("uid"));
 								} else {
+									/*
 									bFlagInsert = false;
 									listError.add(bInfo(965305015, iTipNumber));
+									*/
+									mInsertMap.put("people_uid", "");
+									
 								}
 
 							}
