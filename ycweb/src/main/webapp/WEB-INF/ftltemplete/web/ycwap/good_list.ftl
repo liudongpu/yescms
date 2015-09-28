@@ -20,7 +20,7 @@
 				
 				<div class="c_label">
 					<div class="c_title">${el["name"]}</div>
-					<div class="c_desc">拍卖日期：${a_auction["time"]}</div>
+					<div class="c_desc">图录号：${el["code"]}</div>
 					<div class="c_desc">估价：${el["assess_price"]}</div>
 					<div class="c_desc">成交价：<span class="ym_b_money"><@m_web_format_money p_money=el["success_price"]/></span></div>
 				</div>

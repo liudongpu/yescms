@@ -110,7 +110,7 @@
 				<div class="c_item"  <@m_web_event_click p_link="index" /> ><div class="c_ico c_i1"></div><div class="c_text">回到首页  </div></div>
 				<div class="c_item"  <@m_web_event_click p_link="notice_list" /> ><div class="c_ico c_i2"></div><div class="c_text">正道公告  </div></div>
 				<div class="c_item"  <@m_web_event_click p_link="people_list" /> ><div class="c_ico c_i3"></div><div class="c_text">正道指数  </div></div>
-				<div class="c_item"  <@m_web_event_click p_link="static_info?u_code=4653000100010001" /> ><div class="c_ico c_i4"></div><div class="c_text">客户服务 </div></div>
+				<div class="c_item"  <@m_web_event_click p_link="static_info?u_code=4653000100010006" /> ><div class="c_ico c_i4"></div><div class="c_text">联系方式 </div></div>
 			</div>
 		</div>
 		
