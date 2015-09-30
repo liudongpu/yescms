@@ -10,7 +10,7 @@ public class YesCmsHelper {
 
 	{
 
-		return sString.replaceAll("\\<html.*html\\>", "");
+		return sString.replaceAll("<html.*</html>", "");
 
 	}
 	

@@ -1,5 +1,7 @@
 package com.srnpr.yescms;
 
+import org.junit.Test;
+
 import com.srnpr.zapcom.basehelper.TestHelper;
 
 /**
@@ -9,5 +11,9 @@ public class AppTest extends TestHelper
 
 {
 
-	
+	public void test()
+	{
+		
+		
+	}
 }
