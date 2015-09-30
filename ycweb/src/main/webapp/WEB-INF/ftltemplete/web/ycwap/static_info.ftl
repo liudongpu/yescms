@@ -5,14 +5,14 @@
 
 <#assign  a_code=a_macro_web_sessionhelper.upRequest("u_code") />
 <#assign  a_info=a_macro_web_dbcall.upOne("yc_static","code",a_code) />
-
+<#assign a_yes_helper=b_method.upClass("com.srnpr.yescms.helper.YesCmsHelper") />
 
 <@m_site_header p_title=a_info["title"] p_lib=""  p_header=""/>
 
 <div class="ym_stin_main">
 
 	<div class="c_info">
-		${a_info["content"]}
+		${a_yes_helper.formatHtml(a_info["content"])}
 	</div>
 	
 	

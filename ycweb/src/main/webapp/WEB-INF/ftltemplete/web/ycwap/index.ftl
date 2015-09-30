@@ -5,6 +5,8 @@
 
 
 <#assign   a_list=a_macro_web_dbcall.queryAll("yc_adv","","-zid"," wap_url!='' ") />
+<#assign a_yes_helper=b_method.upClass("com.srnpr.yescms.helper.YesCmsHelper") />
+
 
 <@m_site_header p_title="首页" p_lib="swiper"  p_header="index"/>
 
@@ -20,7 +22,7 @@
 							<#list a_list as el>
 								<div class="swiper-slide">
 						      		
-						      		<@m_web_html_img p_img=el["wap_url"]    p_width=640  p_link=el["link_url"] /> 
+						      		<@m_web_html_img p_img=el["wap_url"]    p_width=640  p_link=a_yes_helper.formatLink(el["link_url"]) /> 
 						      		
 						    	</div>
 							</#list>
