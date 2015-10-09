@@ -137,7 +137,9 @@
 		<@m_web_html_initjs p_initjs/>
 	</#if>
 	
-	
+	<div class="w_display">
+	<script src="http://s11.cnzz.com/z_stat.php?id=1256019766&;web_id=1256019766" language="JavaScript"></script>
+	</div>
 	<@m_web_html_end />
 </#macro>
 
