@@ -2,6 +2,8 @@
 <#assign a_macro_web_system_version="2.0.0.09">
 <#-- 资源附加后缀版本 -->
 <#assign a_macro_web_resources_version="?v="+a_macro_web_system_version >
+<#-- 生产时放开 -->
+<#assign a_macro_web_resources_version="" >
 <#-- 资源文件路径 -->
 <#assign a_macro_web_resources_link="../../" >
 
