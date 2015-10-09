@@ -93,7 +93,7 @@
 								
 									<div class="c_select_item">
 										<div class="c_select_image" >
-											<@m_web_html_img p_img=el p_width=103 p_link="javascript:$('#carousel-example-generic').carousel("+el_index+")" /> 
+											<@m_web_html_img p_img=el p_width=103 p_link="javascript:yclib.page_good_select("+el_index+")" /> 
 										</div>
 									</div>
 								

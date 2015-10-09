@@ -3,7 +3,7 @@
 <@m_web_init_dbcall />
 <#assign   a_list=a_macro_web_dbcall.queryAll("yc_adv","","-zid","") />
 
-<@m_site_header p_title="首页"/>
+<@m_site_header p_title="北京正道国际拍卖有限公司"/>
 
 <div class="ycsite_index_main">
 

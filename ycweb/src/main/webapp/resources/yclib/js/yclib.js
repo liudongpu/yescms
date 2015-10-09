@@ -17,6 +17,10 @@ var yclib = {
 
 	},
 
+	page_good_select:function(iIndex)
+	{
+		$('#carousel-example-generic').carousel(iIndex);
+	},
 	page_good_change : function(sType, iSize) {
 
 		var iMax = (iSize / 6);
