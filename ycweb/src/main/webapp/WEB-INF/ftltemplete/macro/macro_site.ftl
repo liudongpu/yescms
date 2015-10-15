@@ -15,7 +15,7 @@
 	
 	<@m_web_html_begin p_title=p_title  p_js=a_macro_site_resources_thems_js p_css=a_macro_site_resources_thems_css  />
 	<link rel="shortcut icon" href="http://img.jkcdn.yxl9.cn/sfiles/yczdpm/favicon.ico" />
-	<meta name="keywords" content="正道拍卖,拍卖,正道,珠宝,玉石,机构,北京正道国际拍卖有限公司" />
+	<meta name="keywords" content="正道拍卖,北京正道,拍卖,正道,珠宝,玉石,机构,北京正道国际拍卖有限公司" />
 	<meta name="description" content="${p_title}-正道拍卖 - 中国珠宝玉石专业拍卖机构" />
 	<@m_web_body_begin />
 	
