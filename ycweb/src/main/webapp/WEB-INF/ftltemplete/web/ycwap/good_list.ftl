@@ -10,7 +10,7 @@
 
 <div class="ym_goli_main">
 	<div class="c_top">${a_info["name"]}</div>
-	<div class="c_time">专场时间：${a_info["time"]}</div>
+	<div class="c_time">${a_info["special_remark"]}</div>
 	<#list a_list as el>
 		<div class="c_item" <@m_web_event_click p_link="good_info?u_id="+el["uid"] /> >
 			<div class="c_detail  <#if (el_index%2==0)>c_one</#if>">
